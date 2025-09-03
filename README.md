@@ -38,7 +38,7 @@ I’m a cybersecurity junkie with over five years of experience tearing into mal
 
 <br />
 
-  <img src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=prashanthpulisetti&show_icons=true" />
+  <img src="https://github-readme-stats.anuraghazra1.vercel.app/api?username=0xPrashanthSec&show_icons=true" />
 
 
 
