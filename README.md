@@ -2,8 +2,8 @@
 
 I’m a cybersecurity junkie with over five years of experience tearing into malware, reverse engineering code, and hunting threats. Kicking off as a SOC Analyst at Alphaserver Technologies (2019–2021), I’ve climbed to leading ECI’s Security Operations Center in Hyderabad, mastering tools like Wireshark, Azure Sentinel, and CrowdStrike to keep threats at bay. Snagging Performer of the Year awards (2022, 2023) and a spot in Oracle’s Hall of Fame for nailing a critical bug fuels my drive. I’m all about outsmarting cybercriminals and sharing my passion for a safer digital world on this blog.
 
-- 🐞 I’m currently working as Threat Hunter / Content Developer
-- 🦀 I’m currently learning Offensive Rust 🦀
+- 🐞 I currently work as a Lead and Content Developer.
+- 🦀 I'm actively learning Offensive Rust to deepen my skills in adversary simulation and red team tooling.
 - 📫 How to reach me: connect.procreate115@passmail.net
 - 📝 [Want to hire me? download my resume here](https://drive.google.com/file/d/1xr_90QiB5jgRL8jllD4z22cWcklBrY51/view?usp=sharing)
 
