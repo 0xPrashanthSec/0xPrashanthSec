@@ -61,7 +61,7 @@ An automation tool that extracts IOCs from threat intel blogs and converts them 
 - **NCIIPC (Govt. of India)** – 15 acknowledgments for responsible disclosures  
 - **Dell, Trip Advisor, Cybrary** – Bug bounty recognitions  
 - **TNS Clothing** – P1 vulnerability reward recipient  
-- **Employee of the Year** – Eze Castle Integration (2022 & 2023)
+- **Top Performer of the Year** – Eze Castle Integration (2022 & 2023)
 
 ---
 
