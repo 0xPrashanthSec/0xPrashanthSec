@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Prashanth Pulisetti - Cybersecurity Specialist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">0xPrashanthSec</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="greeting">Hi there, I'm</span>
+                    <span class="name">Sai Prashanth Pulisetti</span>
+                </h1>
+                <p class="hero-subtitle">Cybersecurity Specialist | SOC Lead | Detection Engineer</p>
+                <p class="hero-description">
+                    Leading SOC teams through critical incidents, building scalable detection frameworks, 
+                    and developing automation tools that empower defenders.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">CRTE</span>
+                    <span class="badge">CRTO</span>
+                    <span class="badge">CHFI</span>
+                </div>
+                <div class="hero-links">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#contact" class="btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <span class="window-title">terminal</span>
+                    </div>
+                    <div class="window-content">
+                        <pre><code class="language-bash">$ whoami
+Sai Prashanth Pulisetti
+
+$ cat /etc/skills
+- Threat Hunting & IR
+- SIEM Engineering
+- Purple Teaming
+- Malware Analysis
+
+$ ls -la /achievements/
+drwxr-xr-x Oracle Hall of Fame
+drwxr-xr-x NCIIPC Recognition
+drwxr-xr-x Top Performer 2022-2023</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a cybersecurity professional with 6+ years of experience in Security Operations Center (SOC) 
+                        environments, specializing in threat hunting, malware analysis, and SIEM engineering.
+                    </p>
+                    <p>
+                        I lead SOC teams through critical incidents, build scalable detection frameworks, and develop 
+                        automation tools that reduce time-to-detection and improve operational efficiency.
+                    </p>
+                    <p>
+                        I'm passionate about purple teaming, open-source contributions, and building tools that empower 
+                        defenders. My work has been recognized by Oracle, Trip Advisor, Dell, and the Government of India 
+                        for impactful vulnerability disclosures.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">6+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">Detection Rules</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Vulnerability Disclosures</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Sigma-to-SIEM Converter</h3>
+                        <div class="project-links">
+                            <a href="https://sigmahqtoecs.itspulisetti.workers.dev/" target="_blank" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        A web-based tool that converts Sigma rules into Elastic and Azure Sentinel queries.
+                    </p>
+                    <ul class="project-features">
+                        <li>Automates ECS-aligned query generation</li>
+                        <li>Reduces manual effort and speeds up deployment</li>
+                        <li>Supports multi-platform SIEM environments</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Sigma</span>
+                        <span class="tech-tag">KQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">IOC Hunter</h3>
+                        <div class="project-links">
+                            <a href="https://0xprashanthsec.github.io/IOCQuery/" target="_blank" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        An automation tool that extracts IOCs from threat intel blogs and converts them into SIEM-ready queries.
+                    </p>
+                    <ul class="project-features">
+                        <li>Accelerates threat detection onboarding</li>
+                        <li>Converts open-source intelligence into actionable rules</li>
+                        <li>Integrates with Elastic SIEM for real-time hunting</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Elastic</span>
+                        <span class="tech-tag">OSINT</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Elastic SIEM Use Case Library</h3>
+                    </div>
+                    <p class="project-description">
+                        Comprehensive collection of custom detection rules based on malware analysis and threat actor TTPs.
+                    </p>
+                    <ul class="project-features">
+                        <li>Authored 300+ custom detection rules</li>
+                        <li>Tuned alerts to reduce false positives</li>
+                        <li>Supports proactive threat hunting and incident response</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Elastic</span>
+                        <span class="tech-tag">Sigma</span>
+                        <span class="tech-tag">Threat Hunting</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Projects -->
+            <div class="additional-projects">
+                <h3 class="additional-projects-title">Additional Projects</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Email Analyzer</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/0xPrashanthSec/EmailAnalyzer" target="_blank" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A comprehensive email analysis tool for security professionals to analyze email headers, 
+                            detect phishing attempts, and extract threat intelligence from suspicious emails.
+                        </p>
+                        <ul class="project-features">
+                            <li>Email header analysis and parsing</li>
+                            <li>Phishing detection algorithms</li>
+                            <li>Threat intelligence extraction</li>
+                            <li>Automated email forensics</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Email Security</span>
+                            <span class="tech-tag">Forensics</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Password Audit Plugin</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/0xPrashanthSec/password-audit" target="_blank" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A powerful Obsidian plugin designed to analyze password strength, check for security breaches, 
+                            and generate secure passwords with ease.
+                        </p>
+                        <ul class="project-features">
+                            <li>Password strength analysis</li>
+                            <li>Breached password checking via Have I Been Pwned</li>
+                            <li>Secure password generation</li>
+                            <li>Clipboard integration</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Obsidian</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Threat Hunting & IR</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Malware Analysis</span>
+                        <span class="skill-tag">P1/P2 Case Handling</span>
+                        <span class="skill-tag">Forensics</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">SIEM Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Elastic (ELK)</span>
+                        <span class="skill-tag">Azure Sentinel</span>
+                        <span class="skill-tag">Splunk</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">EDR/XDR</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CB Defense</span>
+                        <span class="skill-tag">SentinelOne</span>
+                        <span class="skill-tag">CrowdStrike</span>
+                        <span class="skill-tag">Microsoft Defender</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Scripting & Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Detection Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Sigma</span>
+                        <span class="skill-tag">YARA</span>
+                        <span class="skill-tag">KQL</span>
+                        <span class="skill-tag">SPL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Cloud Security</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microsoft Cloud Security Portal</span>
+                        <span class="skill-tag">Azure AD</span>
+                        <span class="skill-tag">M365</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section class="recognition">
+        <div class="container">
+            <h2 class="section-title">Recognition</h2>
+            <div class="recognition-grid">
+                <div class="recognition-item">
+                    <h3 class="recognition-title">Oracle Hall of Fame</h3>
+                    <p class="recognition-description">Critical vulnerability discovery</p>
+                </div>
+                <div class="recognition-item">
+                    <h3 class="recognition-title">NCIIPC (Govt. of India)</h3>
+                    <p class="recognition-description">15 acknowledgments for responsible disclosures</p>
+                </div>
+                <div class="recognition-item">
+                    <h3 class="recognition-title">Dell, Trip Advisor, Cybrary</h3>
+                    <p class="recognition-description">Bug bounty recognitions</p>
+                </div>
+                <div class="recognition-item">
+                    <h3 class="recognition-title">Top Performer of the Year</h3>
+                    <p class="recognition-description">Eze Castle Integration (2022 & 2023)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-description">
+                        I'm always open to collaboration, community projects, and sharing knowledge. 
+                        Feel free to reach out!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:connect.procreate115@passmail.net" class="contact-link">connect.procreate115@passmail.net</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-text">Hyderabad, Telangana, India</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Website</span>
+                            <a href="https://prashanth.blog" target="_blank" class="contact-link">prashanth.blog</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/0xPrashanthSec" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://linkedin.com/in/prashanthpulisetti" target="_blank" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2024 Sai Prashanth Pulisetti. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
