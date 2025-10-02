@@ -110,12 +110,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const rss2jsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
         
         try {
-            const response = await fetch(rss2jsonUrl);
+            // Add timeout to prevent hanging
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+            
+            const response = await fetch(rss2jsonUrl, {
+                signal: controller.signal,
+                headers: {
+                    'Accept': 'application/json',
+                }
+            });
+            
+            clearTimeout(timeoutId);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
             const data = await response.json();
             
             if (data.status === 'ok' && data.items && data.items.length > 0) {
                 displayBlogs(data.items.slice(0, 6)); // Show latest 6 articles
             } else {
+                console.log('No articles found or RSS feed empty');
                 showFallbackBlogs();
             }
         } catch (error) {
@@ -167,12 +184,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const container = document.getElementById('blogs-container');
         const fallback = document.getElementById('blogs-fallback');
         
-        container.style.display = 'none';
-        fallback.style.display = 'grid';
+        if (container && fallback) {
+            container.style.display = 'none';
+            fallback.style.display = 'grid';
+            console.log('Showing fallback blog content');
+        }
     }
 
-    // Initialize Medium blogs
+    // Initialize Medium blogs with fallback timeout
     fetchMediumBlogs();
+    
+    // Show fallback content after 5 seconds if Medium integration fails
+    setTimeout(() => {
+        const container = document.getElementById('blogs-container');
+        const fallback = document.getElementById('blogs-fallback');
+        
+        // Check if container still shows loading
+        if (container && container.innerHTML.includes('Loading latest articles')) {
+            console.log('Medium integration timeout - showing fallback content');
+            showFallbackBlogs();
+        }
+    }, 5000);
 
     // Code syntax highlighting initialization
     function initializeCodeHighlighting() {
