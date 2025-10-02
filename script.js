@@ -103,6 +103,77 @@ document.addEventListener('DOMContentLoaded', function() {
     // Additional projects functionality (no API needed)
     console.log('Portfolio loaded successfully with direct project links');
 
+    // Medium Blog Integration
+    async function fetchMediumBlogs() {
+        const mediumUsername = 'prashanth-pulisetti';
+        const rssUrl = `https://medium.com/feed/@${mediumUsername}`;
+        const rss2jsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        
+        try {
+            const response = await fetch(rss2jsonUrl);
+            const data = await response.json();
+            
+            if (data.status === 'ok' && data.items && data.items.length > 0) {
+                displayBlogs(data.items.slice(0, 6)); // Show latest 6 articles
+            } else {
+                showFallbackBlogs();
+            }
+        } catch (error) {
+            console.error('Error fetching Medium blogs:', error);
+            showFallbackBlogs();
+        }
+    }
+
+    function displayBlogs(articles) {
+        const container = document.getElementById('blogs-container');
+        container.innerHTML = '';
+        
+        articles.forEach(article => {
+            const blogCard = document.createElement('div');
+            blogCard.className = 'blog-card';
+            
+            // Extract tags from categories
+            const tags = article.categories ? article.categories.slice(0, 3) : ['Security'];
+            
+            // Format date
+            const date = new Date(article.pubDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+            
+            // Clean description (remove HTML tags and limit length)
+            const description = article.description
+                .replace(/<[^>]*>/g, '')
+                .substring(0, 150) + '...';
+            
+            blogCard.innerHTML = `
+                <div class="blog-header">
+                    <h3 class="blog-title">${article.title}</h3>
+                    <span class="blog-date">${date}</span>
+                </div>
+                <p class="blog-excerpt">${description}</p>
+                <div class="blog-meta">
+                    ${tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                </div>
+                <a href="${article.link}" target="_blank" class="blog-link">Read on Medium →</a>
+            `;
+            
+            container.appendChild(blogCard);
+        });
+    }
+
+    function showFallbackBlogs() {
+        const container = document.getElementById('blogs-container');
+        const fallback = document.getElementById('blogs-fallback');
+        
+        container.style.display = 'none';
+        fallback.style.display = 'grid';
+    }
+
+    // Initialize Medium blogs
+    fetchMediumBlogs();
+
     // Code syntax highlighting initialization
     function initializeCodeHighlighting() {
         // Add language-specific classes to code blocks

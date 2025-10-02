@@ -33,6 +33,9 @@
                     <a href="#skills" class="nav-link">Skills</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#blogs" class="nav-link">Blogs</a>
+                </li>
+                <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
@@ -60,7 +63,10 @@
                 <div class="hero-badges">
                     <span class="badge">CRTE</span>
                     <span class="badge">CRTO</span>
+                    <span class="badge">CRTP</span>
                     <span class="badge">CHFI</span>
+                    <span class="badge">EJPT</span>
+
                 </div>
                 <div class="hero-links">
                     <a href="#projects" class="btn-primary">View Projects</a>
@@ -88,9 +94,14 @@ $ cat /etc/skills
 - Malware Analysis
 
 $ ls -la /achievements/
+
+drwxr-xr-x Dell Recognition
+drwxr-xr-x Trip Advisor Recognition
+drwxr-xr-x Cybrary Recognition
+drwxr-xr-x TNS Clothing Recognition
 drwxr-xr-x Oracle Hall of Fame
 drwxr-xr-x NCIIPC Recognition
-drwxr-xr-x Top Performer 2022-2023</code></pre>
+drwxr-xr-x Top Performer 2022-2023 @Eze Castle Integration</code></pre>
                     </div>
                 </div>
             </div>
@@ -314,6 +325,87 @@ drwxr-xr-x Top Performer 2022-2023</code></pre>
                         <span class="skill-tag">Azure AD</span>
                         <span class="skill-tag">M365</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="blogs">
+        <div class="container">
+            <h2 class="section-title">Blog Posts</h2>
+            <div class="blogs-intro">
+                <p class="blogs-description">
+                    Sharing knowledge and insights from my cybersecurity journey. 
+                    Explore my latest articles on threat hunting, security operations, and industry best practices.
+                </p>
+                <div class="blogs-platform">
+                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="platform-link">
+                        <span class="platform-icon">📝</span>
+                        <span class="platform-text">Follow on Medium</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="blogs-grid" id="blogs-container">
+                <!-- Blog posts will be loaded here -->
+                <div class="blog-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading latest articles...</p>
+                </div>
+            </div>
+
+            <!-- Fallback content if Medium integration fails -->
+            <div class="blogs-fallback" id="blogs-fallback" style="display: none;">
+                <div class="blog-card">
+                    <div class="blog-header">
+                        <h3 class="blog-title">Cybersecurity Insights</h3>
+                        <span class="blog-date">Recent</span>
+                    </div>
+                    <p class="blog-excerpt">
+                        Explore my latest thoughts on cybersecurity trends, threat hunting techniques, 
+                        and security operations best practices.
+                    </p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Security</span>
+                        <span class="blog-tag">Threat Hunting</span>
+                        <span class="blog-tag">SOC</span>
+                    </div>
+                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="blog-link">Read on Medium →</a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-header">
+                        <h3 class="blog-title">Detection Engineering</h3>
+                        <span class="blog-date">Recent</span>
+                    </div>
+                    <p class="blog-excerpt">
+                        Deep dive into building effective detection rules, SIEM optimization, 
+                        and reducing false positives in security operations.
+                    </p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Detection</span>
+                        <span class="blog-tag">SIEM</span>
+                        <span class="blog-tag">Engineering</span>
+                    </div>
+                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="blog-link">Read on Medium →</a>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-header">
+                        <h3 class="blog-title">Purple Teaming</h3>
+                        <span class="blog-date">Recent</span>
+                    </div>
+                    <p class="blog-excerpt">
+                        Insights on purple team exercises, red team techniques, 
+                        and building effective defense strategies.
+                    </p>
+                    <div class="blog-meta">
+                        <span class="blog-tag">Purple Team</span>
+                        <span class="blog-tag">Red Team</span>
+                        <span class="blog-tag">Defense</span>
+                    </div>
+                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="blog-link">Read on Medium →</a>
                 </div>
             </div>
         </div>
