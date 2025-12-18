@@ -1,15 +1,15 @@
 // Smooth scrolling and navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (hamburger) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             if (navMenu) navMenu.classList.toggle('active');
-            
+
             // Prevent body scroll when menu is open
             if (navMenu && navMenu.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // - Close mobile menu for all nav links
     // - Only intercept internal anchors (href starting with '#') for smooth scrolling
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             // Close mobile menu if open
             if (hamburger) hamburger.classList.remove('active');
             if (navMenu) navMenu.classList.remove('active');
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href && href.startsWith('#')) {
                 e.preventDefault();
                 const targetSection = document.querySelector(href);
-                
+
                 if (targetSection) {
                     const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
                     window.scrollTo({
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Scroll event listeners
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         updateActiveNavLink();
         updateNavbarBackground();
     });
@@ -122,27 +122,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const mediumUsername = 'prashanth-pulisetti';
         const rssUrl = `https://medium.com/feed/@${mediumUsername}`;
         const rss2jsonUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-        
+
         try {
             // Add timeout to prevent hanging
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-            
+
             const response = await fetch(rss2jsonUrl, {
                 signal: controller.signal,
                 headers: {
                     'Accept': 'application/json',
                 }
             });
-            
+
             clearTimeout(timeoutId);
-            
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
+
             const data = await response.json();
-            
+
             if (data.status === 'ok' && data.items && data.items.length > 0) {
                 displayBlogs(data.items.slice(0, 6)); // Show latest 6 articles
             } else {
@@ -158,26 +158,26 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayBlogs(articles) {
         const container = document.getElementById('blogs-container');
         container.innerHTML = '';
-        
+
         articles.forEach(article => {
             const blogCard = document.createElement('div');
             blogCard.className = 'blog-card';
-            
+
             // Extract tags from categories
             const tags = article.categories ? article.categories.slice(0, 3) : ['Security'];
-            
+
             // Format date
             const date = new Date(article.pubDate).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric'
             });
-            
+
             // Clean description (remove HTML tags and limit length)
             const description = article.description
                 .replace(/<[^>]*>/g, '')
                 .substring(0, 150) + '...';
-            
+
             blogCard.innerHTML = `
                 <div class="blog-header">
                     <h3 class="blog-title">${article.title}</h3>
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <a href="${article.link}" target="_blank" class="blog-link">Read on Medium →</a>
             `;
-            
+
             container.appendChild(blogCard);
         });
     }
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showFallbackBlogs() {
         const container = document.getElementById('blogs-container');
         const fallback = document.getElementById('blogs-fallback');
-        
+
         if (container && fallback) {
             container.style.display = 'none';
             fallback.style.display = 'grid';
@@ -207,12 +207,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize Medium blogs with fallback timeout
     fetchMediumBlogs();
-    
+
     // Show fallback content after 5 seconds if Medium integration fails
     setTimeout(() => {
         const container = document.getElementById('blogs-container');
         const fallback = document.getElementById('blogs-fallback');
-        
+
         // Check if container still shows loading
         if (container && container.innerHTML.includes('Loading latest articles')) {
             console.log('Medium integration timeout - showing fallback content');
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 block.className = 'language-bash';
             }
         });
-        
+
         // Re-run Prism highlighting
         if (typeof Prism !== 'undefined') {
             Prism.highlightAll();
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function typeWriter(element, text, speed = 100) {
         let i = 0;
         element.innerHTML = '';
-        
+
         function type() {
             if (i < text.length) {
                 element.innerHTML += text.charAt(i);
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(type, speed);
             }
         }
-        
+
         type();
     }
 
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateParallax() {
         const scrolled = window.pageYOffset;
         const heroVisual = document.querySelector('.hero-visual');
-        
+
         if (heroVisual && scrolled < window.innerHeight) {
             const rate = scrolled * -0.5;
             heroVisual.style.transform = `translateY(${rate}px)`;
@@ -281,11 +281,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Skill tags hover effect
     const skillTags = document.querySelectorAll('.skill-tag');
     skillTags.forEach(tag => {
-        tag.addEventListener('mouseenter', function() {
+        tag.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-2px) scale(1.05)';
         });
-        
-        tag.addEventListener('mouseleave', function() {
+
+        tag.addEventListener('mouseleave', function () {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
@@ -293,21 +293,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Project cards tilt effect
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
-        card.addEventListener('mousemove', function(e) {
+        card.addEventListener('mousemove', function (e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = (y - centerY) / 10;
             const rotateY = (centerX - x) / 10;
-            
+
             this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
         });
     });
@@ -315,13 +315,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth reveal animation for stats
     function animateStats() {
         const stats = document.querySelectorAll('.stat-number, .github-stat-number');
-        
+
         stats.forEach(stat => {
             const target = parseInt(stat.textContent.replace(/\D/g, ''));
             const suffix = stat.textContent.replace(/\d/g, '');
             let current = 0;
             const increment = target / 50;
-            
+
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Trigger stats animation when in view
-    const statsObserver = new IntersectionObserver(function(entries) {
+    const statsObserver = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateStats();
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `);
 
     // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             // Close mobile menu
             if (hamburger) hamburger.classList.remove('active');
@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Apply debouncing to scroll events
-    const debouncedScrollHandler = debounce(function() {
+    const debouncedScrollHandler = debounce(function () {
         updateActiveNavLink();
         updateNavbarBackground();
         updateParallax();
@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeTooltips() {
         const tooltipElements = document.querySelectorAll('[data-tooltip]');
         tooltipElements.forEach(el => {
-            el.addEventListener('mouseenter', function() {
+            el.addEventListener('mouseenter', function () {
                 const tooltip = document.createElement('div');
                 tooltip.className = 'tooltip';
                 tooltip.textContent = this.getAttribute('data-tooltip');
@@ -423,14 +423,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     transition: opacity 0.3s ease;
                 `;
                 document.body.appendChild(tooltip);
-                
+
                 const rect = this.getBoundingClientRect();
                 tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + 'px';
                 tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
-                
+
                 setTimeout(() => tooltip.style.opacity = '1', 10);
-                
-                this.addEventListener('mouseleave', function() {
+
+                this.addEventListener('mouseleave', function () {
                     tooltip.style.opacity = '0';
                     setTimeout(() => document.body.removeChild(tooltip), 300);
                 });
@@ -440,4 +440,121 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize tooltips
     initializeTooltips();
+
+    /* =========================================
+       Background Animation (Interactive Dots)
+       ========================================= */
+    const canvas = document.createElement('canvas');
+    canvas.className = 'hero-background-canvas';
+    const hero = document.querySelector('.hero');
+
+    // Only proceed if hero element exists
+    if (hero) {
+        // Insert canvas before other content in hero
+        hero.insertBefore(canvas, hero.firstChild);
+
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        // Mouse object to track position
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 150 // Connection radius for mouse
+        };
+
+        window.addEventListener('mousemove', function (event) {
+            // Get mouse position relative to canvas
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = event.clientX - rect.left;
+            mouse.y = event.clientY - rect.top;
+        });
+
+        const resize = () => {
+            width = canvas.width = hero.offsetWidth;
+            height = canvas.height = hero.offsetHeight;
+            initParticles();
+        };
+
+        const initParticles = () => {
+            particles = [];
+            // Density adjustment
+            const count = Math.floor((width * height) / 10000);
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 1,
+                    vy: (Math.random() - 0.5) * 1,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        };
+
+        const animate = () => {
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw particles and connections
+            particles.forEach((p, i) => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // Bounce off edges
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                // Draw particle
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = '#333';
+                ctx.fill();
+
+                // Connect particles to each other
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(51, 51, 51, ${0.1 - dist / 1000})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+
+                // Connect particles to mouse
+                if (mouse.x != null) {
+                    const dx = p.x - mouse.x;
+                    const dy = p.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < mouse.radius) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(51, 51, 51, ${0.2 - dist / mouse.radius * 0.2})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+
+            requestAnimationFrame(animate);
+        };
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+
+        // Reset mouse on leave
+        hero.addEventListener('mouseleave', function () {
+            mouse.x = null;
+            mouse.y = null;
+        });
+    }
 });
