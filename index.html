@@ -299,19 +299,37 @@
                 <div class="sec-rule"></div>
             </div>
             <div class="blogs-topbar">
-                <p>Threat hunting methodologies, detection engineering deep-dives, malware analysis walkthroughs, and SOC insights published on Medium.</p>
+                <p>Threat hunting methodologies, detection engineering deep-dives, and SOC research. Hosted posts live here; longer-form articles on Medium.</p>
                 <a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="medium-btn">Follow on Medium ↗</a>
             </div>
+            <!-- Pinned hosted posts -->
+            <div class="blogs-grid" style="margin-bottom:1.1rem">
+                <div class="bcard" style="border-top:2px solid var(--sev-red)">
+                    <div class="bcard-meta"><span class="bcat" style="color:var(--sev-red)">ZERO-DAY</span><span class="bdt">Jun 2026</span></div>
+                    <h3>GreatXML: How a WinRE Answer File Breaks BitLocker</h3>
+                    <p>Physical-access bypass of BitLocker via Windows Defender WinRE — no credentials, no recovery key, public PoC. TPM-only provides no protection. 7 KQL queries for Elastic SIEM.</p>
+                    <div class="btags"><span>BitLocker</span><span>WinRE</span><span>KQL</span><span>Zero-Day</span><span>Windows</span></div>
+                    <a href="blog/posts/greatxml-bitlocker-winre-bypass.html" class="bread">Read Post →</a>
+                </div>
+                <div class="bcard" style="border-top:2px solid var(--near-black)">
+                    <div class="bcard-meta"><span class="bcat">Threat Hunting</span><span class="bdt">Jun 2026</span></div>
+                    <h3>BadSuccessor: Hunting dMSA Privilege Escalation in Active Directory</h3>
+                    <p>A design flaw in Windows Server 2025 lets any user with CreateChild rights on an OU inherit Domain Admin privileges in 3 LDAP calls. 7 KQL queries, full attack chain breakdown.</p>
+                    <div class="btags"><span>AD</span><span>KQL</span><span>Elastic SIEM</span><span>dMSA</span><span>Kerberos</span></div>
+                    <a href="blog/posts/badsuccessor-hunting-dmsa-privilege-escalation.html" class="bread">Read Post →</a>
+                </div>
+            </div>
+            <!-- Medium feed (dynamic) -->
             <div class="blogs-grid" id="blogs-grid">
                 <div class="load-state"><div class="lspin"></div><p>Loading articles…</p></div>
             </div>
             <div class="blogs-grid" id="blogs-fallback" style="display:none">
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Threat Hunting</span><span class="bdt">Dec 2024</span></div><h3>Advanced Threat Hunting in Elastic SIEM</h3><p>Building effective hunting queries using EQL and KQL, behavioral baselining, and hypothesis-driven hunting workflows for enterprise SOC teams.</p><div class="btags"><span>Elastic</span><span>SIEM</span><span>EQL</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Detection Engineering</span><span class="bdt">Nov 2024</span></div><h3>Writing Production-Grade Sigma Rules</h3><p>High-fidelity Sigma rules: condition logic, field mapping, false positive reduction, and pipeline configuration for multi-SIEM deployment.</p><div class="btags"><span>Sigma</span><span>Detection</span><span>SOC</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Purple Team</span><span class="bdt">Oct 2024</span></div><h3>Purple Team Exercises: A Practical Approach</h3><p>Adversary emulation using CRTE-level AD attack paths, Atomic Red Team, and measuring SOC detection coverage against MITRE ATT&CK.</p><div class="btags"><span>Purple Team</span><span>MITRE</span><span>ATT&CK</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Malware Analysis</span><span class="bdt">Sep 2024</span></div><h3>Malware Analysis for SOC Analysts</h3><p>Static and dynamic analysis, sandbox output interpretation, YARA rule writing, and IOC extraction pipelines for tier 2/3 SOC analysts.</p><div class="btags"><span>Malware</span><span>YARA</span><span>DFIR</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">SIEM</span><span class="bdt">Aug 2024</span></div><h3>Optimizing Elastic SIEM at Scale</h3><p>Performance tuning, ILM, alert fatigue reduction, and scaling Elastic SIEM beyond 100K EPS in financial sector environments.</p><div class="btags"><span>Elastic</span><span>Performance</span><span>Scale</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Incident Response</span><span class="bdt">Jul 2024</span></div><h3>Ransomware IR: Alert to Containment</h3><p>Real-world ransomware response: detection patterns, containment, DFIR case workflow, and post-incident rule improvements.</p><div class="btags"><span>Ransomware</span><span>IR</span><span>Playbook</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
+                <div class="bcard"><div class="bcard-meta"><span class="bcat">Threat Hunting</span><span class="bdt">Dec 2025</span></div><h3>Advanced Threat Hunting in Elastic SIEM</h3><p>Building effective hunting queries using EQL and KQL, behavioral baselining, and hypothesis-driven hunting workflows for enterprise SOC teams.</p><div class="btags"><span>Elastic</span><span>SIEM</span><span>EQL</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
+                <div class="bcard"><div class="bcard-meta"><span class="bcat">Detection Engineering</span><span class="bdt">Nov 2025</span></div><h3>Writing Production-Grade Sigma Rules</h3><p>High-fidelity Sigma rules: condition logic, field mapping, false positive reduction, and pipeline configuration for multi-SIEM deployment.</p><div class="btags"><span>Sigma</span><span>Detection</span><span>SOC</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
+                <div class="bcard"><div class="bcard-meta"><span class="bcat">Purple Team</span><span class="bdt">Oct 2025</span></div><h3>Purple Team Exercises: A Practical Approach</h3><p>Adversary emulation using CRTE-level AD attack paths, Atomic Red Team, and measuring SOC detection coverage against MITRE ATT&amp;CK.</p><div class="btags"><span>Purple Team</span><span>MITRE</span><span>ATT&amp;CK</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
+                <div class="bcard"><div class="bcard-meta"><span class="bcat">Malware Analysis</span><span class="bdt">Sep 2025</span></div><h3>Malware Analysis for SOC Analysts</h3><p>Static and dynamic analysis, sandbox output interpretation, YARA rule writing, and IOC extraction pipelines for tier 2/3 SOC analysts.</p><div class="btags"><span>Malware</span><span>YARA</span><span>DFIR</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
+                <div class="bcard"><div class="bcard-meta"><span class="bcat">SIEM</span><span class="bdt">Aug 2025</span></div><h3>Optimizing Elastic SIEM at Scale</h3><p>Performance tuning, ILM, alert fatigue reduction, and scaling Elastic SIEM beyond 100K EPS in financial sector environments.</p><div class="btags"><span>Elastic</span><span>Performance</span><span>Scale</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
+                <div class="bcard"><div class="bcard-meta"><span class="bcat">Incident Response</span><span class="bdt">Jul 2025</span></div><h3>Ransomware IR: Alert to Containment</h3><p>Real-world ransomware response: detection patterns, containment, DFIR case workflow, and post-incident rule improvements.</p><div class="btags"><span>Ransomware</span><span>IR</span><span>Playbook</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
             </div>
         </div>
     </section>
