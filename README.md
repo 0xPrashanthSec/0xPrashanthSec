@@ -90,4 +90,4 @@ An automation tool that extracts IOCs from threat intel blogs and converts them 
 
 ## 📬 Let’s Connect
 
-I’m always open to collaboration, community projects, and sharing knowledge. Feel free to reach out via [email](mailto:connect.procreate115@passmail.net) or connect on [LinkedIn](https://linkedin.com/in/your-profile).
+I’m always open to collaboration, community projects, and sharing knowledge. Feel free to reach out via [email](mailto:prashanth.inbox@tuta.com or connect on [LinkedIn](https://linkedin.com/in/your-profile).
