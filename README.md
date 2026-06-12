@@ -4,7 +4,7 @@
 
 **Cybersecurity Specialist | SOC Lead | Detection Engineer | CRTE | CRTO | CHFI**  
 📍 Hyderabad, Telangana, India  
-📧 connect.procreate115@passmail.net
+📧 prashanth.inbox@tuta.com
 🌐 [https://prashanth.blog](https://prashanth.blog) | 🔗 [LinkedIn](https://linkedin.com/in/0xPrashanthSec)
 
 ---
