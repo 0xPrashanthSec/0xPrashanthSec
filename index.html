@@ -15,24 +15,6 @@
 </head>
 <body>
 
-    <!-- Top alert bar -->
-    <div class="topbar">
-        <div class="tb-label"><span class="tb-dot"></span>THREAT INTEL</div>
-        <div class="tb-scroll-wrap">
-            <div class="tb-scroll" id="tb-scroll">
-                <span>Ransomware groups targeting financial sector via phishing · </span>
-                <span>CISA KEV: Active exploitation detected across multiple products · </span>
-                <span>NCIIPC acknowledgment #15: Responsible disclosure accepted · </span>
-                <span>New Sigma rules: WMI-based lateral movement detection · </span>
-                <span>BYOVD technique leveraged to disable EDR solutions · </span>
-                <span>APT campaigns observed targeting critical infrastructure · </span>
-                <span>Ransomware groups targeting financial sector via phishing · </span>
-                <span>CISA KEV: Active exploitation detected across multiple products · </span>
-            </div>
-        </div>
-        <div class="tb-time" id="tb-time"></div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
@@ -40,10 +22,9 @@
             <ul class="nav-list" id="nav-list">
                 <li><a href="#home" class="nlink">Home</a></li>
                 <li><a href="#about" class="nlink">About</a></li>
+                <li><a href="#research" class="nlink">Research</a></li>
                 <li><a href="#projects" class="nlink">Projects</a></li>
-                <li><a href="#arsenal" class="nlink">Arsenal</a></li>
-                <li><a href="#intel" class="nlink"><span class="nlink-pulse"></span>Intel</a></li>
-                <li><a href="#blogs" class="nlink">Blog</a></li>
+                <li><a href="#arsenal" class="nlink">Skills</a></li>
                 <li><a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank" class="nlink nlink-ext">SOC Cmds ↗</a></li>
                 <li><a href="#contact" class="nlink">Contact</a></li>
             </ul>
@@ -79,8 +60,8 @@
                     <span class="cert">CHFI</span><span class="cert">eJPT</span><span class="cert">SOAR</span>
                 </div>
                 <div class="hero-btns">
-                    <a href="#projects" class="hbtn hbtn-dark">View Projects</a>
-                    <a href="#intel" class="hbtn hbtn-outline">Security Intel</a>
+                    <a href="#research" class="hbtn hbtn-dark">Read Research</a>
+                    <a href="#projects" class="hbtn hbtn-outline">View Projects</a>
                     <a href="#contact" class="hbtn hbtn-ghost">Contact</a>
                 </div>
             </div>
@@ -115,15 +96,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="hero-stats">
-            <div class="hstat"><span class="hstat-n" data-target="6">0</span><span class="hstat-sup">+</span><span class="hstat-l">Years in SOC</span></div>
-            <div class="hstat-sep"></div>
-            <div class="hstat"><span class="hstat-n" data-target="300">0</span><span class="hstat-sup">+</span><span class="hstat-l">Detection Rules</span></div>
-            <div class="hstat-sep"></div>
-            <div class="hstat"><span class="hstat-n" data-target="15">0</span><span class="hstat-l">CVE Disclosures</span></div>
-            <div class="hstat-sep"></div>
-            <div class="hstat"><span class="hstat-n" data-target="4">0</span><span class="hstat-l">Active Certs</span></div>
         </div>
     </section>
 
@@ -191,12 +163,30 @@
         </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section bg-white">
+    <!-- ===== RESEARCH ===== -->
+    <section id="research" class="section bg-white">
         <div class="container">
             <div class="sec-hd">
-                <span class="sec-tag">// featured_tools</span>
-                <h2 class="sec-title">The Arsenal</h2>
+                <span class="sec-tag">// writeups</span>
+                <h2 class="sec-title">Research</h2>
+                <div class="sec-rule"></div>
+            </div>
+            <div class="blogs-topbar">
+                <p>Original research on detection engineering, threat hunting, and adversary tradecraft.</p>
+            </div>
+            <div class="research-placeholder">
+                <span class="rph-label">// more_writeups_coming</span>
+                <p>New posts in progress. Check back soon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <div class="sec-hd">
+                <span class="sec-tag">// featured_projects</span>
+                <h2 class="sec-title">Projects</h2>
                 <div class="sec-rule"></div>
             </div>
             <div class="proj-grid main-proj">
@@ -243,7 +233,7 @@
     </section>
 
     <!-- ===== ARSENAL ===== -->
-    <section id="arsenal" class="section bg-light">
+    <section id="arsenal" class="section bg-white">
         <div class="container">
             <div class="sec-hd">
                 <span class="sec-tag">// technical_stack</span>
@@ -263,79 +253,8 @@
         </div>
     </section>
 
-    <!-- ===== INTEL NEWS ===== -->
-    <section id="intel" class="section bg-white">
-        <div class="container">
-            <div class="sec-hd">
-                <span class="sec-tag">// threat_intelligence</span>
-                <h2 class="sec-title">Security Intel Feed</h2>
-                <div class="sec-rule"></div>
-            </div>
-            <div class="intel-topbar">
-                <div class="itb-left"><span class="itb-live"><span class="live-dot"></span>LIVE</span><span class="itb-src">The Hacker News · BleepingComputer · Krebs · SecurityWeek</span></div>
-                <div class="itb-right"><span id="intel-ts">Auto-refreshing</span><button id="intel-refresh" class="itb-btn">↻ Refresh</button></div>
-            </div>
-            <div class="intel-filters">
-                <button class="flt active" data-filter="all">All</button>
-                <button class="flt" data-filter="vulnerability">Vulnerabilities</button>
-                <button class="flt" data-filter="ransomware">Ransomware</button>
-                <button class="flt" data-filter="breach">Breaches</button>
-                <button class="flt" data-filter="malware">Malware</button>
-                <button class="flt" data-filter="threat-intel">Threat Intel</button>
-            </div>
-            <div class="intel-grid" id="intel-grid">
-                <div class="load-state"><div class="lspin"></div><p>Fetching threat intelligence…</p></div>
-            </div>
-            <p class="intel-foot">Sourced from <a href="https://thehackernews.com" target="_blank">The Hacker News</a>, <a href="https://bleepingcomputer.com" target="_blank">BleepingComputer</a>, and <a href="https://cisa.gov" target="_blank">CISA</a>. Updates every 3 hours.</p>
-        </div>
-    </section>
-
-    <!-- ===== BLOGS ===== -->
-    <section id="blogs" class="section bg-light">
-        <div class="container">
-            <div class="sec-hd">
-                <span class="sec-tag">// research_&amp;_writing</span>
-                <h2 class="sec-title">Blog &amp; Research</h2>
-                <div class="sec-rule"></div>
-            </div>
-            <div class="blogs-topbar">
-                <p>Threat hunting methodologies, detection engineering deep-dives, and SOC research. Hosted posts live here; longer-form articles on Medium.</p>
-                <a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="medium-btn">Follow on Medium ↗</a>
-            </div>
-            <!-- Pinned hosted posts -->
-            <div class="blogs-grid" style="margin-bottom:1.1rem">
-                <div class="bcard" style="border-top:2px solid var(--sev-red)">
-                    <div class="bcard-meta"><span class="bcat" style="color:var(--sev-red)">ZERO-DAY</span><span class="bdt">Jun 2026</span></div>
-                    <h3>GreatXML: How a WinRE Answer File Breaks BitLocker</h3>
-                    <p>Physical-access bypass of BitLocker via Windows Defender WinRE — no credentials, no recovery key, public PoC. TPM-only provides no protection. 7 KQL queries for Elastic SIEM.</p>
-                    <div class="btags"><span>BitLocker</span><span>WinRE</span><span>KQL</span><span>Zero-Day</span><span>Windows</span></div>
-                    <a href="blog/posts/greatxml-bitlocker-winre-bypass.html" class="bread">Read Post →</a>
-                </div>
-                <div class="bcard" style="border-top:2px solid var(--near-black)">
-                    <div class="bcard-meta"><span class="bcat">Threat Hunting</span><span class="bdt">Jun 2026</span></div>
-                    <h3>BadSuccessor: Hunting dMSA Privilege Escalation in Active Directory</h3>
-                    <p>A design flaw in Windows Server 2025 lets any user with CreateChild rights on an OU inherit Domain Admin privileges in 3 LDAP calls. 7 KQL queries, full attack chain breakdown.</p>
-                    <div class="btags"><span>AD</span><span>KQL</span><span>Elastic SIEM</span><span>dMSA</span><span>Kerberos</span></div>
-                    <a href="blog/posts/badsuccessor-hunting-dmsa-privilege-escalation.html" class="bread">Read Post →</a>
-                </div>
-            </div>
-            <!-- Medium feed (dynamic) -->
-            <div class="blogs-grid" id="blogs-grid">
-                <div class="load-state"><div class="lspin"></div><p>Loading articles…</p></div>
-            </div>
-            <div class="blogs-grid" id="blogs-fallback" style="display:none">
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Threat Hunting</span><span class="bdt">Dec 2025</span></div><h3>Advanced Threat Hunting in Elastic SIEM</h3><p>Building effective hunting queries using EQL and KQL, behavioral baselining, and hypothesis-driven hunting workflows for enterprise SOC teams.</p><div class="btags"><span>Elastic</span><span>SIEM</span><span>EQL</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Detection Engineering</span><span class="bdt">Nov 2025</span></div><h3>Writing Production-Grade Sigma Rules</h3><p>High-fidelity Sigma rules: condition logic, field mapping, false positive reduction, and pipeline configuration for multi-SIEM deployment.</p><div class="btags"><span>Sigma</span><span>Detection</span><span>SOC</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Purple Team</span><span class="bdt">Oct 2025</span></div><h3>Purple Team Exercises: A Practical Approach</h3><p>Adversary emulation using CRTE-level AD attack paths, Atomic Red Team, and measuring SOC detection coverage against MITRE ATT&amp;CK.</p><div class="btags"><span>Purple Team</span><span>MITRE</span><span>ATT&amp;CK</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Malware Analysis</span><span class="bdt">Sep 2025</span></div><h3>Malware Analysis for SOC Analysts</h3><p>Static and dynamic analysis, sandbox output interpretation, YARA rule writing, and IOC extraction pipelines for tier 2/3 SOC analysts.</p><div class="btags"><span>Malware</span><span>YARA</span><span>DFIR</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">SIEM</span><span class="bdt">Aug 2025</span></div><h3>Optimizing Elastic SIEM at Scale</h3><p>Performance tuning, ILM, alert fatigue reduction, and scaling Elastic SIEM beyond 100K EPS in financial sector environments.</p><div class="btags"><span>Elastic</span><span>Performance</span><span>Scale</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-                <div class="bcard"><div class="bcard-meta"><span class="bcat">Incident Response</span><span class="bdt">Jul 2025</span></div><h3>Ransomware IR: Alert to Containment</h3><p>Real-world ransomware response: detection patterns, containment, DFIR case workflow, and post-incident rule improvements.</p><div class="btags"><span>Ransomware</span><span>IR</span><span>Playbook</span></div><a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="bread">Read on Medium →</a></div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== RECOGNITION ===== -->
-    <section class="section bg-white">
+    <section class="section bg-light">
         <div class="container">
             <div class="sec-hd">
                 <span class="sec-tag">// hall_of_fame</span>
@@ -352,7 +271,7 @@
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section bg-light">
+    <section id="contact" class="section bg-white">
         <div class="container">
             <div class="sec-hd">
                 <span class="sec-tag">// get_in_touch</span>

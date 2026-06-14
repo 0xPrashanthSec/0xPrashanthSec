@@ -1,23 +1,12 @@
 /* ============================================================
    0xPrashanthSec Portfolio — White/Black Editorial Theme
-   Features: Subtle dot canvas · Typing effect · RSS news feed
-             Blog integration · Scroll reveal · Nav behaviour
+   Features: Subtle dot canvas · Typing effect · Blog integration
+             Scroll reveal · Nav behaviour
    ============================================================ */
 
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    /* ── Clock ─────────────────────────────────────────── */
-    function clock() {
-        const el = document.getElementById('tb-time');
-        if (!el) return;
-        const n = new Date();
-        const p = v => String(v).padStart(2,'0');
-        el.textContent = `${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())} IST`;
-    }
-    clock();
-    setInterval(clock, 1000);
 
     /* ── Navbar ─────────────────────────────────────────── */
     const navbar  = document.getElementById('navbar');
@@ -50,13 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const t = document.querySelector(a.getAttribute('href'));
             if (!t) return;
             e.preventDefault();
-            window.scrollTo({ top: t.offsetTop - 92, behavior: 'smooth' });
+            window.scrollTo({ top: t.offsetTop - 68, behavior: 'smooth' });
         });
     });
 
     function markActiveNav() {
         const secs = document.querySelectorAll('section[id]');
-        const sy   = window.scrollY + 110;
+        const sy   = window.scrollY + 90;
         secs.forEach(s => {
             const lnk = document.querySelector(`.nlink[href="#${s.id}"]`);
             if (!lnk) return;
@@ -98,13 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (p.x < 0 || p.x > W) p.vx *= -1;
                 if (p.y < 0 || p.y > H) p.vy *= -1;
 
-                // Draw dot
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                 ctx.fillStyle = 'rgba(0,0,0,0.12)';
                 ctx.fill();
 
-                // Connect nearby dots
                 for (let j = i + 1; j < pts.length; j++) {
                     const q = pts[j];
                     const dx = p.x - q.x, dy = p.y - q.y;
@@ -119,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                // Connect to mouse
                 if (mx !== null) {
                     const dx = p.x - mx, dy = p.y - my;
                     const d  = Math.sqrt(dx*dx + dy*dy);
@@ -166,28 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 60);
     })();
 
-    /* ── Counter Animation ──────────────────────────────── */
-    function runCounters() {
-        document.querySelectorAll('[data-target]').forEach(el => {
-            const target = +el.dataset.target;
-            let cur = 0;
-            const step = target / (1600 / 16);
-            const t = setInterval(() => {
-                cur = Math.min(cur + step, target);
-                el.textContent = Math.floor(cur);
-                if (cur >= target) clearInterval(t);
-            }, 16);
-        });
-    }
-    const statsEl = document.querySelector('.hero-stats');
-    if (statsEl) {
-        new IntersectionObserver((ens, obs) => {
-            if (ens[0].isIntersecting) { runCounters(); obs.disconnect(); }
-        }, { threshold: .4 }).observe(statsEl);
-    }
-
     /* ── Scroll Reveal ──────────────────────────────────── */
-    const revealSel = '.pcard,.skcard,.rcard,.bcard,.icard,.profile-box,.timeline-box,.about-text,.terminal,.hero-stats';
+    const revealSel = '.pcard,.skcard,.rcard,.bcard,.profile-box,.timeline-box,.about-text,.terminal';
     const revEls = document.querySelectorAll(revealSel);
     revEls.forEach(el => el.classList.add('reveal'));
 
@@ -200,186 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: .07, rootMargin: '0px 0px -30px 0px' });
     revEls.forEach(el => revObs.observe(el));
-
-    /* ── Security News Feed ─────────────────────────────── */
-    const SOURCES = [
-        { url: 'https://feeds.feedburner.com/TheHackersNews',  label: 'The Hacker News' },
-        { url: 'https://www.bleepingcomputer.com/feed/',       label: 'BleepingComputer' },
-        { url: 'https://krebsonsecurity.com/feed/',            label: 'Krebs on Security' },
-        { url: 'https://www.securityweek.com/feed',            label: 'SecurityWeek'     },
-    ];
-    const R2J       = 'https://api.rss2json.com/v1/api.json?rss_url=';
-    const CACHE_KEY = 'intel_feed_v4';
-    const CACHE_TTL = 3 * 60 * 60 * 1000;
-
-    function categorize(text) {
-        const t = text.toLowerCase();
-        if (/ransomware|lockbit|cl0p|blackcat|extortion/.test(t)) return 'ransomware';
-        if (/breach|leak|exposed|stolen|credential|data dump/.test(t)) return 'breach';
-        if (/cve-|zero.?day|exploit|vulnerability|rce|patch|auth bypass|buffer overflow/.test(t)) return 'vulnerability';
-        if (/apt|threat actor|campaign|espionage|nation.?state|unc\d|ta\d|fin\d/.test(t)) return 'threat-intel';
-        if (/malware|trojan|backdoor|rat |botnet|infostealer|loader|dropper/.test(t)) return 'malware';
-        return 'general';
-    }
-    function severity(text, cat) {
-        const t = text.toLowerCase();
-        if (/zero.?day|critical|ransomware|actively exploit|rce|wormable|mass exploit/.test(t)) return 'critical';
-        if (/high.?sever|data breach|apt |nation.?state|supply.?chain/.test(t)) return 'high';
-        if (/medium|patch|advisory|vulnerability/.test(t)) return 'medium';
-        return 'low';
-    }
-    function timeAgo(ds) {
-        const d = Math.floor((Date.now() - new Date(ds)) / 60000);
-        if (d < 60)   return `${d}m ago`;
-        if (d < 1440) return `${Math.floor(d/60)}h ago`;
-        return `${Math.floor(d/1440)}d ago`;
-    }
-
-    function buildCard(item) {
-        const combo = (item.title || '') + ' ' + (item.description || '');
-        const cat   = categorize(combo);
-        const sev   = severity(combo, cat);
-        const labels = { critical:'CRITICAL', high:'HIGH', medium:'MEDIUM', low:'LOW' };
-        const cats   = { ransomware:'🔴 Ransomware', breach:'💾 Breach', vulnerability:'⚠️ Vulnerability', 'threat-intel':'🎯 Threat Intel', malware:'🦠 Malware', general:'📡 Security' };
-        const title  = (item.title || '').replace(/<[^>]*>/g,'').slice(0, 110);
-
-        const d = document.createElement('div');
-        d.className = 'icard reveal';
-        d.dataset.cat = cat;
-        d.innerHTML = `
-            <div class="icard-row1">
-                <span class="isev sev-${sev}">${labels[sev]}</span>
-                <span class="icat">${cats[cat]}</span>
-            </div>
-            <div class="ititle"><a href="${item.link}" target="_blank" rel="noopener">${title}</a></div>
-            <div class="imeta">
-                <span class="isource">${item._src}</span>
-                <span class="idate">${timeAgo(item.pubDate)}</span>
-            </div>
-            <a href="${item.link}" target="_blank" rel="noopener" class="iread">Read →</a>`;
-        return d;
-    }
-
-    async function fetchFeed(src) {
-        try {
-            const res  = await fetch(R2J + encodeURIComponent(src.url), { signal: AbortSignal.timeout(8000) });
-            const data = await res.json();
-            if (data.status !== 'ok') return [];
-            return (data.items || []).slice(0, 5).map(i => ({ ...i, _src: src.label }));
-        } catch { return []; }
-    }
-
-    let cachedItems = [];
-
-    async function loadIntel(force = false) {
-        const grid = document.getElementById('intel-grid');
-        if (!grid) return;
-
-        // Cache
-        if (!force) {
-            try {
-                const c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-                if (c && Date.now() - c.ts < CACHE_TTL && c.items?.length) {
-                    renderCards(c.items, grid);
-                    setTimestamp(new Date(c.ts));
-                    cachedItems = c.items;
-                    return;
-                }
-            } catch {}
-        }
-
-        grid.innerHTML = '<div class="load-state"><div class="lspin"></div><p>Fetching threat intelligence…</p></div>';
-
-        const results = await Promise.allSettled(SOURCES.map(fetchFeed));
-        let items = results.filter(r => r.status === 'fulfilled').flatMap(r => r.value).filter(i => i.title && i.link);
-        items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-
-        const seen = new Set();
-        items = items.filter(i => {
-            const k = i.title.slice(0, 45).toLowerCase();
-            if (seen.has(k)) return false;
-            seen.add(k); return true;
-        }).slice(0, 18);
-
-        if (items.length) {
-            try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items })); } catch {}
-            cachedItems = items;
-            renderCards(items, grid);
-            setTimestamp(new Date());
-        } else {
-            grid.innerHTML = `<div class="load-state"><p style="color:#b91c1c">⚠ Feed temporarily unavailable. <a href="https://thehackernews.com" target="_blank" style="color:var(--accent)">Visit THN →</a></p></div>`;
-        }
-    }
-
-    function renderCards(items, grid) {
-        grid.innerHTML = '';
-        items.forEach(item => {
-            const card = buildCard(item);
-            grid.appendChild(card);
-            setTimeout(() => revObs.observe(card), 10);
-        });
-    }
-
-    function setTimestamp(d) {
-        const el = document.getElementById('intel-ts');
-        if (el) el.textContent = `Updated ${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}`;
-    }
-
-    // Filters
-    document.querySelectorAll('.flt').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.flt').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const f = btn.dataset.filter;
-            document.querySelectorAll('.icard').forEach(c => {
-                c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
-            });
-        });
-    });
-
-    document.getElementById('intel-refresh')?.addEventListener('click', () => loadIntel(true));
-    loadIntel();
-
-    /* ── Medium Blog Feed ───────────────────────────────── */
-    async function loadBlogs() {
-        const grid     = document.getElementById('blogs-grid');
-        const fallback = document.getElementById('blogs-fallback');
-        if (!grid) return;
-        try {
-            const url  = R2J + encodeURIComponent('https://medium.com/feed/@prashanth-pulisetti');
-            const res  = await fetch(url, { signal: AbortSignal.timeout(9000) });
-            const data = await res.json();
-            if (data.status !== 'ok' || !data.items?.length) throw 0;
-            grid.innerHTML = '';
-            data.items.slice(0, 6).forEach(a => {
-                const tags    = (a.categories || []).slice(0, 3);
-                const dt      = new Date(a.pubDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-                const excerpt = (a.description || '').replace(/<[^>]*>/g,'').slice(0,145) + '…';
-                const d = document.createElement('div');
-                d.className = 'bcard reveal';
-                d.innerHTML = `
-                    <div class="bcard-meta">
-                        <span class="bcat">${tags[0] || 'Security'}</span>
-                        <span class="bdt">${dt}</span>
-                    </div>
-                    <h3>${a.title}</h3>
-                    <p>${excerpt}</p>
-                    <div class="btags">${tags.map(t=>`<span>${t}</span>`).join('')}</div>
-                    <a href="${a.link}" target="_blank" rel="noopener" class="bread">Read on Medium →</a>`;
-                grid.appendChild(d);
-                setTimeout(() => revObs.observe(d), 10);
-            });
-        } catch {
-            if (grid)     grid.style.display     = 'none';
-            if (fallback) fallback.style.display  = 'grid';
-        }
-    }
-    loadBlogs();
-    setTimeout(() => {
-        const g = document.getElementById('blogs-grid');
-        const f = document.getElementById('blogs-fallback');
-        if (g && g.querySelector('.load-state')) { g.style.display='none'; if(f) f.style.display='grid'; }
-    }, 9000);
 
     /* ── Prism ──────────────────────────────────────────── */
     const hljs = () => { if (window.Prism) Prism.highlightAll(); };
