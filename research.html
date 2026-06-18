@@ -165,124 +165,102 @@
     <script src="./script.js"></script>
     <script>
     (function () {
-        var USERNAME   = 'prashanth-pulisetti';
-        var MEDIUM_RSS = 'https://medium.com/feed/@' + USERNAME;
-
-        function fmt(dateStr) {
-            return new Date(dateStr).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
-        }
-        function strip(html) {
-            var d = document.createElement('div'); d.innerHTML = html;
-            return (d.textContent || d.innerText || '').trim();
-        }
-
-        function parseRSS(xmlStr) {
-            var doc   = new DOMParser().parseFromString(xmlStr, 'text/xml');
-            var nodes = Array.from(doc.querySelectorAll('item'));
-            return nodes.map(function (n) {
-                var linkEl = n.querySelector('link');
-                var link   = (linkEl && linkEl.nextSibling) ? linkEl.nextSibling.nodeValue : '';
-                if (!link) link = n.querySelector('guid') ? n.querySelector('guid').textContent : '';
-
-                var contentEls = n.getElementsByTagNameNS(
-                    'http://purl.org/rss/1.0/modules/content/', 'encoded');
-                var content = contentEls.length ? contentEls[0].textContent : '';
-
-                return {
-                    title:       n.querySelector('title')       ? n.querySelector('title').textContent : '',
-                    link:        link.trim(),
-                    pubDate:     n.querySelector('pubDate')     ? n.querySelector('pubDate').textContent : '',
-                    description: n.querySelector('description') ? n.querySelector('description').textContent : '',
-                    content:     content,
-                    categories:  Array.from(n.querySelectorAll('category')).map(function (c) { return c.textContent; })
-                };
-            });
-        }
-
-        function render(items) {
-            var wrap = document.getElementById('medium-posts');
-            if (!wrap) return;
-
-            if (!items || items.length === 0) {
-                wrap.innerHTML =
-                    '<div class="research-placeholder">' +
-                    '<span class="rph-label">// no_posts_yet</span>' +
-                    '<p>No posts published yet — <a href="https://medium.com/@' + USERNAME +
-                    '" target="_blank" style="color:inherit;text-decoration:underline">follow on Medium ↗</a></p>' +
-                    '</div>';
-                return;
+        var posts = [
+            {
+                title: "Microsoft's New Centralized Defense: Blocking External Teams Users Directly from Defender Portal",
+                date:  "Dec 22, 2025",
+                blurb: "The Quiet Security Win That Changes How Admins Work — a look at how Microsoft now lets you block external Teams users centrally from the Defender portal without touching Exchange or Teams admin.",
+                tags:  ["Microsoft Defender", "Teams Security", "Detection"],
+                url:   "https://prashanth-pulisetti.medium.com/microsofts-new-centralized-defense-blocking-external-teams-users-directly-from-defender-portal-87022a9f7767"
+            },
+            {
+                title: "Oracle E-Business Suite Zero-Day Exploited in Clop Data Theft Attacks: CVE-2025-61882",
+                date:  "Oct 7, 2025",
+                blurb: "Oracle patched a critical zero-day after the notorious Clop ransomware group actively exploited it to exfiltrate data from enterprise EBS deployments — full exploitation timeline and detection guidance.",
+                tags:  ["CVE", "Oracle", "Ransomware"],
+                url:   "https://prashanth-pulisetti.medium.com/oracle-e-business-suite-zero-day-exploited-in-clop-data-theft-attacks-cve-2025-61882-73bff4e92545"
+            },
+            {
+                title: "CVE-2024-3400: Attackers Revive a Palo Alto GlobalProtect RCE — Exploitation and Detection",
+                date:  "Sep 30, 2025",
+                blurb: "In late September 2025 researchers observed a fresh surge in attacks targeting this critical Palo Alto GlobalProtect RCE. Covers the exploit chain, indicators, and Sigma/KQL detection rules.",
+                tags:  ["CVE", "Palo Alto", "Threat Hunting"],
+                url:   "https://prashanth-pulisetti.medium.com/cve-2024-3400-attackers-revive-a-palo-alto-globalprotect-rce-exploitation-and-detection-118eb578a3e3"
+            },
+            {
+                title: "Beware the Fake CAPTCHA: How Attackers Are Sneaking Malware Past Your Defenses",
+                date:  "Apr 7, 2025",
+                blurb: "Threat actors are abusing fake CAPTCHA prompts to trick users into executing malicious payloads. Breaks down the delivery chain, browser-based lures, and detection opportunities for SOC teams.",
+                tags:  ["Malware", "Phishing", "Defense Evasion"],
+                url:   "https://prashanth-pulisetti.medium.com/beware-the-fake-captcha-how-attackers-are-sneaking-malware-past-your-defenses-80b3d65d9175"
+            },
+            {
+                title: "PoisonSeed: The Phishing Campaign Hijacking CRM Platforms to Steal Crypto Secrets",
+                date:  "Apr 5, 2025",
+                blurb: "PoisonSeed compromises CRM and bulk email providers to blast seed-phrase phishing at scale, pivoting from enterprise access to cryptocurrency theft — TTP breakdown and detection strategy.",
+                tags:  ["Phishing", "CRM", "Crypto Threat"],
+                url:   "https://prashanth-pulisetti.medium.com/poisonseed-the-phishing-campaign-hijacking-crm-platforms-to-steal-crypto-secrets-a6bfbae2c625"
+            },
+            {
+                title: "From Email Chaos to Clarity: How Proton Unlimited and SimpleLogin Transformed My Inbox",
+                date:  "Apr 4, 2025",
+                blurb: "A practitioner's take on using Proton Mail and SimpleLogin aliases to eliminate spam, protect identity, and regain control of personal email infrastructure.",
+                tags:  ["Privacy", "Email Security", "Proton"],
+                url:   "https://prashanth-pulisetti.medium.com/from-email-chaos-to-clarity-how-proton-unlimited-and-simplelogin-transformed-my-inbox-8c44073a3f7b"
+            },
+            {
+                title: "Detecting Malicious Guest Accounts and Remote Monitoring Tool (RMM) Deployments in Microsoft Teams",
+                date:  "Nov 13, 2024",
+                blurb: "Attackers are abusing Teams guest invitations to drop RMM tooling inside the corporate perimeter. Covers detection logic, KQL queries, and the behavioural patterns that give it away.",
+                tags:  ["Detection", "Microsoft Teams", "RMM"],
+                url:   "https://prashanth-pulisetti.medium.com/detecting-malicious-guest-accounts-and-remote-monitoring-tool-rmm-deployments-in-microsoft-teams-d59885b2743d"
+            },
+            {
+                title: "How to Simulate Network-Based Data Transfer in Small Chunks",
+                date:  "Feb 26, 2024",
+                blurb: "A PowerShell technique for simulating low-and-slow data exfiltration in small network chunks — useful for validating DLP and detection controls before adversaries probe for the same gap.",
+                tags:  ["PowerShell", "Detection Engineering", "Network"],
+                url:   "https://prashanth-pulisetti.medium.com/how-to-simulate-network-based-data-transfer-in-small-chunks-e9f0e36782d5"
+            },
+            {
+                title: "Remote Access Tool — AnyDesk Execution With Known Revoked Signing Certificate",
+                date:  "Feb 8, 2024",
+                blurb: "Analysis of threat actors deploying AnyDesk signed with a known-revoked certificate to bypass endpoint controls — covers the certificate chain abuse, detection signatures, and response playbook.",
+                tags:  ["RAT", "AnyDesk", "Endpoint Detection"],
+                url:   "https://prashanth-pulisetti.medium.com/remote-access-tool-anydesk-execution-with-known-revoked-signing-certificate-15ee79a14406"
             }
+        ];
 
-            var grid = document.createElement('div');
-            grid.className = 'blogs-grid';
+        var wrap = document.getElementById('medium-posts');
+        if (!wrap) return;
 
-            items.forEach(function (item) {
-                var tags  = (item.categories || []).slice(0, 3);
-                var date  = item.pubDate ? fmt(item.pubDate) : '';
-                var blurb = strip(item.description || item.content || '').slice(0, 160);
+        var grid = document.createElement('div');
+        grid.className = 'blogs-grid';
 
-                var card       = document.createElement('a');
-                card.href      = item.link;
-                card.target    = '_blank';
-                card.rel       = 'noopener noreferrer';
-                card.className = 'bcard';
+        posts.forEach(function (post) {
+            var card       = document.createElement('a');
+            card.href      = post.url;
+            card.target    = '_blank';
+            card.rel       = 'noopener noreferrer';
+            card.className = 'bcard';
 
-                card.innerHTML =
-                    '<div class="bcard-meta">' +
-                        '<span class="bcat">Medium</span>' +
-                        (date ? '<span class="bdt">' + date + '</span>' : '') +
-                    '</div>' +
-                    '<h3>' + item.title + '</h3>' +
-                    (blurb ? '<p>' + blurb + '…</p>' : '') +
-                    (tags.length
-                        ? '<div class="btags">' +
-                            tags.map(function (t) { return '<span>' + t + '</span>'; }).join('') +
-                          '</div>'
-                        : '') +
-                    '<span class="bread">Read on Medium →</span>';
+            card.innerHTML =
+                '<div class="bcard-meta">' +
+                    '<span class="bcat">Medium</span>' +
+                    '<span class="bdt">' + post.date + '</span>' +
+                '</div>' +
+                '<h3>' + post.title + '</h3>' +
+                '<p>' + post.blurb + '</p>' +
+                '<div class="btags">' +
+                    post.tags.map(function (t) { return '<span>' + t + '</span>'; }).join('') +
+                '</div>' +
+                '<span class="bread">Read on Medium →</span>';
 
-                grid.appendChild(card);
-            });
+            grid.appendChild(card);
+        });
 
-            wrap.innerHTML = '';
-            wrap.appendChild(grid);
-        }
-
-        function showError() {
-            var wrap = document.getElementById('medium-posts');
-            if (wrap) wrap.innerHTML =
-                '<div class="research-placeholder">' +
-                '<span class="rph-label">// could_not_load</span>' +
-                '<p>Posts couldn\'t be loaded. ' +
-                '<a href="https://medium.com/@' + USERNAME + '" target="_blank" ' +
-                'style="color:inherit;text-decoration:underline">View on Medium ↗</a></p>' +
-                '</div>';
-        }
-
-        /* 1. allorigins proxy → parse RSS directly */
-        fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(MEDIUM_RSS))
-            .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
-            .then(function (json) {
-                if (!json.contents) throw new Error();
-                var items = parseRSS(json.contents);
-                if (items.length > 0) { render(items); return; }
-                /* 2. Fallback: rss2json */
-                return fetch('https://api.rss2json.com/v1/api.json?rss_url=' +
-                    encodeURIComponent(MEDIUM_RSS) + '&count=20')
-                    .then(function (r2) { return r2.json(); })
-                    .then(function (d) {
-                        render((d.status === 'ok' && d.items) ? d.items : []);
-                    });
-            })
-            .catch(function () {
-                fetch('https://api.rss2json.com/v1/api.json?rss_url=' +
-                    encodeURIComponent(MEDIUM_RSS) + '&count=20')
-                    .then(function (r) { return r.json(); })
-                    .then(function (d) {
-                        render((d.status === 'ok' && d.items) ? d.items : []);
-                    })
-                    .catch(showError);
-            });
+        wrap.innerHTML = '';
+        wrap.appendChild(grid);
     })();
     </script>
 </body>
