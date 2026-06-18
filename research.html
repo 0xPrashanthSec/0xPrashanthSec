@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research & Writing — Sai Prashanth Pulisetti. Detection engineering, threat hunting, and adversary tradecraft on Medium.">
+    <title>Research — Sai Prashanth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .research-page-hero {
+            padding: 7rem 0 3.5rem;
+            background: var(--black);
+            text-align: center;
+        }
+        .research-page-hero .sec-tag {
+            color: var(--gray-500);
+            font-family: var(--font-mono);
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: .75rem;
+        }
+        .research-page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .research-page-hero h1 strong {
+            font-weight: 700;
+        }
+        .research-page-hero p {
+            color: var(--gray-400);
+            font-size: 1rem;
+            max-width: 540px;
+            margin: 0 auto 1.75rem;
+            line-height: 1.7;
+        }
+        .research-page-hero .medium-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.12);
+            color: var(--gray-300);
+            font-family: var(--font-mono);
+            font-size: .8rem;
+            padding: .45rem 1rem;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background .2s, border-color .2s;
+        }
+        .research-page-hero .medium-badge:hover {
+            background: rgba(255,255,255,.1);
+            border-color: rgba(255,255,255,.25);
+        }
+        .research-main {
+            background: var(--bg-light);
+            min-height: 60vh;
+            padding: 4rem 0 6rem;
+        }
+        .research-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .research-topbar p {
+            color: var(--gray-500);
+            font-size: .95rem;
+            margin: 0;
+        }
+        .research-topbar a {
+            font-family: var(--font-mono);
+            font-size: .8rem;
+            color: var(--black);
+            border: 1px solid var(--border-dk);
+            padding: .4rem .9rem;
+            text-decoration: none;
+            transition: background .2s;
+        }
+        .research-topbar a:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">0xPrashanthSec</a>
+            <ul class="nav-list" id="nav-list">
+                <li><a href="index.html#home" class="nlink">Home</a></li>
+                <li><a href="index.html#about" class="nlink">About</a></li>
+                <li><a href="research.html" class="nlink active">Research</a></li>
+                <li><a href="index.html#projects" class="nlink">Projects</a></li>
+                <li><a href="index.html#arsenal" class="nlink">Skills</a></li>
+                <li><a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank" class="nlink nlink-ext">SOC Cmds ↗</a></li>
+                <li><a href="index.html#contact" class="nlink">Contact</a></li>
+            </ul>
+            <div class="nav-trail">
+                <div class="availability"><span class="av-dot"></span><span>Available</span></div>
+                <button class="burger" id="burger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="research-page-hero">
+        <span class="sec-tag">// writeups &amp; research</span>
+        <h1><em class="ht-light">Research &amp;</em> <strong>Writing</strong></h1>
+        <p>Detection engineering, threat hunting, adversary tradecraft, and SOC operations — published on Medium.</p>
+        <a href="https://medium.com/@prashanth-pulisetti" target="_blank" rel="noopener noreferrer" class="medium-badge">
+            ↗ &nbsp;Follow on Medium
+        </a>
+    </div>
+
+    <!-- Blog Listing -->
+    <div class="research-main">
+        <div class="container">
+            <div class="research-topbar">
+                <p>Original research on detection engineering, threat hunting, and adversary tradecraft.</p>
+                <a href="https://medium.com/@prashanth-pulisetti" target="_blank" rel="noopener noreferrer">All posts on Medium ↗</a>
+            </div>
+            <div id="medium-posts">
+                <div class="research-placeholder">
+                    <span class="rph-label">// loading</span>
+                    <p>Fetching posts…</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">Sai Prashanth Pulisetti</div>
+                <p class="footer-sub">Built to defend. Engineered to detect.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/0xPrashanthSec" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/0xPrashanthSec" target="_blank">LinkedIn</a>
+                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank">Medium</a>
+                    <a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank">SOC Cmds</a>
+                </div>
+                <p class="footer-copy">© 2024 Sai Prashanth Pulisetti · All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script>
+    (function () {
+        var USERNAME   = 'prashanth-pulisetti';
+        var MEDIUM_RSS = 'https://medium.com/feed/@' + USERNAME;
+
+        function fmt(dateStr) {
+            return new Date(dateStr).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+        }
+        function strip(html) {
+            var d = document.createElement('div'); d.innerHTML = html;
+            return (d.textContent || d.innerText || '').trim();
+        }
+
+        function parseRSS(xmlStr) {
+            var doc   = new DOMParser().parseFromString(xmlStr, 'text/xml');
+            var nodes = Array.from(doc.querySelectorAll('item'));
+            return nodes.map(function (n) {
+                var linkEl = n.querySelector('link');
+                var link   = (linkEl && linkEl.nextSibling) ? linkEl.nextSibling.nodeValue : '';
+                if (!link) link = n.querySelector('guid') ? n.querySelector('guid').textContent : '';
+
+                var contentEls = n.getElementsByTagNameNS(
+                    'http://purl.org/rss/1.0/modules/content/', 'encoded');
+                var content = contentEls.length ? contentEls[0].textContent : '';
+
+                return {
+                    title:       n.querySelector('title')       ? n.querySelector('title').textContent : '',
+                    link:        link.trim(),
+                    pubDate:     n.querySelector('pubDate')     ? n.querySelector('pubDate').textContent : '',
+                    description: n.querySelector('description') ? n.querySelector('description').textContent : '',
+                    content:     content,
+                    categories:  Array.from(n.querySelectorAll('category')).map(function (c) { return c.textContent; })
+                };
+            });
+        }
+
+        function render(items) {
+            var wrap = document.getElementById('medium-posts');
+            if (!wrap) return;
+
+            if (!items || items.length === 0) {
+                wrap.innerHTML =
+                    '<div class="research-placeholder">' +
+                    '<span class="rph-label">// no_posts_yet</span>' +
+                    '<p>No posts published yet — <a href="https://medium.com/@' + USERNAME +
+                    '" target="_blank" style="color:inherit;text-decoration:underline">follow on Medium ↗</a></p>' +
+                    '</div>';
+                return;
+            }
+
+            var grid = document.createElement('div');
+            grid.className = 'blogs-grid';
+
+            items.forEach(function (item) {
+                var tags  = (item.categories || []).slice(0, 3);
+                var date  = item.pubDate ? fmt(item.pubDate) : '';
+                var blurb = strip(item.description || item.content || '').slice(0, 160);
+
+                var card       = document.createElement('a');
+                card.href      = item.link;
+                card.target    = '_blank';
+                card.rel       = 'noopener noreferrer';
+                card.className = 'bcard';
+
+                card.innerHTML =
+                    '<div class="bcard-meta">' +
+                        '<span class="bcat">Medium</span>' +
+                        (date ? '<span class="bdt">' + date + '</span>' : '') +
+                    '</div>' +
+                    '<h3>' + item.title + '</h3>' +
+                    (blurb ? '<p>' + blurb + '…</p>' : '') +
+                    (tags.length
+                        ? '<div class="btags">' +
+                            tags.map(function (t) { return '<span>' + t + '</span>'; }).join('') +
+                          '</div>'
+                        : '') +
+                    '<span class="bread">Read on Medium →</span>';
+
+                grid.appendChild(card);
+            });
+
+            wrap.innerHTML = '';
+            wrap.appendChild(grid);
+        }
+
+        function showError() {
+            var wrap = document.getElementById('medium-posts');
+            if (wrap) wrap.innerHTML =
+                '<div class="research-placeholder">' +
+                '<span class="rph-label">// could_not_load</span>' +
+                '<p>Posts couldn\'t be loaded. ' +
+                '<a href="https://medium.com/@' + USERNAME + '" target="_blank" ' +
+                'style="color:inherit;text-decoration:underline">View on Medium ↗</a></p>' +
+                '</div>';
+        }
+
+        /* 1. allorigins proxy → parse RSS directly */
+        fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(MEDIUM_RSS))
+            .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+            .then(function (json) {
+                if (!json.contents) throw new Error();
+                var items = parseRSS(json.contents);
+                if (items.length > 0) { render(items); return; }
+                /* 2. Fallback: rss2json */
+                return fetch('https://api.rss2json.com/v1/api.json?rss_url=' +
+                    encodeURIComponent(MEDIUM_RSS) + '&count=20')
+                    .then(function (r2) { return r2.json(); })
+                    .then(function (d) {
+                        render((d.status === 'ok' && d.items) ? d.items : []);
+                    });
+            })
+            .catch(function () {
+                fetch('https://api.rss2json.com/v1/api.json?rss_url=' +
+                    encodeURIComponent(MEDIUM_RSS) + '&count=20')
+                    .then(function (r) { return r.json(); })
+                    .then(function (d) {
+                        render((d.status === 'ok' && d.items) ? d.items : []);
+                    })
+                    .catch(showError);
+            });
+    })();
+    </script>
+</body>
+</html>
