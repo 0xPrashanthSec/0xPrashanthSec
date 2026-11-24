@@ -36,11 +36,11 @@ I lead a Security Operations Center and build its detection program. Before mana
 
 ### Stack
 
-![Elastic](https://img.shields.io/badge/Elastic-2a2725?style=flat-square) ![Microsoft Sentinel](https://img.shields.io/badge/Microsoft_Sentinel-2a2725?style=flat-square) ![Splunk](https://img.shields.io/badge/Splunk-2a2725?style=flat-square) ![CrowdStrike](https://img.shields.io/badge/CrowdStrike-2a2725?style=flat-square) ![SentinelOne](https://img.shields.io/badge/SentinelOne-2a2725?style=flat-square) ![Microsoft Defender](https://img.shields.io/badge/Microsoft_Defender-2a2725?style=flat-square)
+**SIEM & EDR** &nbsp; Elastic · Microsoft Sentinel · Splunk · CrowdStrike · SentinelOne · Microsoft Defender
 
-![Sigma](https://img.shields.io/badge/Sigma-a3162a?style=flat-square) ![KQL](https://img.shields.io/badge/KQL-a3162a?style=flat-square) ![EQL](https://img.shields.io/badge/EQL-a3162a?style=flat-square) ![ES|QL](https://img.shields.io/badge/ES%7CQL-a3162a?style=flat-square) ![YARA](https://img.shields.io/badge/YARA-a3162a?style=flat-square) ![MITRE ATT&CK](https://img.shields.io/badge/MITRE_ATT%26CK-a3162a?style=flat-square)
+**Detection** &nbsp; Sigma · KQL · EQL · ES|QL · YARA · MITRE ATT&CK
 
-![Atomic Red Team](https://img.shields.io/badge/Atomic_Red_Team-2a2725?style=flat-square) ![CALDERA](https://img.shields.io/badge/CALDERA-2a2725?style=flat-square) ![Cobalt Strike](https://img.shields.io/badge/Cobalt_Strike-2a2725?style=flat-square) ![Active Directory](https://img.shields.io/badge/Active_Directory-2a2725?style=flat-square) ![Microsoft 365](https://img.shields.io/badge/Microsoft_365-2a2725?style=flat-square) ![Entra ID](https://img.shields.io/badge/Entra_ID-2a2725?style=flat-square)
+**Purple team & cloud** &nbsp; Atomic Red Team · CALDERA · Cobalt Strike · Active Directory · Microsoft 365 · Entra ID
 
 ### Latest writing
 
