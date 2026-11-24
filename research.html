@@ -1,287 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research & Writing — Sai Prashanth Pulisetti. Detection engineering, threat hunting, and adversary tradecraft on Medium.">
-    <title>Research — Sai Prashanth</title>
+    <meta name="description" content="Research &amp; Writing — Sai Prashanth Pulisetti. Detection engineering, threat hunting and adversary tradecraft.">
+    <meta name="theme-color" content="#0d0c0b">
+    <title>Research — Sai Prashanth Pulisetti</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
-    <style>
-        .research-page-hero {
-            padding: 3.5rem 0 2.25rem;
-            background: var(--black);
-            text-align: center;
-        }
-        .research-page-hero .sec-tag {
-            color: #888;
-            font-family: var(--font-mono);
-            font-size: .75rem;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: .6rem;
-        }
-        .research-page-hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(1.6rem, 3vw, 2.4rem);
-            font-weight: 300;
-            color: var(--white);
-            line-height: 1.15;
-            margin-bottom: .75rem;
-        }
-        .research-page-hero h1 strong {
-            font-weight: 700;
-        }
-        .research-page-hero p {
-            color: #a09b94;
-            font-size: .92rem;
-            max-width: 480px;
-            margin: 0 auto 1.25rem;
-            line-height: 1.65;
-        }
-        .research-page-hero .medium-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            background: rgba(255,255,255,.06);
-            border: 1px solid rgba(255,255,255,.15);
-            color: #c0bbb4;
-            font-family: var(--font-mono);
-            font-size: .78rem;
-            padding: .4rem .9rem;
-            border-radius: 2px;
-            text-decoration: none;
-            transition: background .2s, border-color .2s;
-        }
-        .research-page-hero .medium-badge:hover {
-            background: rgba(255,255,255,.1);
-            border-color: rgba(255,255,255,.3);
-        }
-        .research-main {
-            background: var(--bg-light);
-            min-height: 60vh;
-            padding: 4rem 0 6rem;
-        }
-        .research-topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .research-topbar p {
-            color: var(--gray-500);
-            font-size: .95rem;
-            margin: 0;
-        }
-        .research-topbar a {
-            font-family: var(--font-mono);
-            font-size: .8rem;
-            color: var(--black);
-            border: 1px solid var(--border-dk);
-            padding: .4rem .9rem;
-            text-decoration: none;
-            transition: background .2s;
-        }
-        .research-topbar a:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-brand">0xPrashanthSec</a>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="index.html#home" class="nlink">Home</a></li>
-                <li><a href="index.html#about" class="nlink">About</a></li>
-                <li><a href="research.html" class="nlink active">Research</a></li>
-                <li><a href="index.html#projects" class="nlink">Projects</a></li>
-                <li><a href="index.html#arsenal" class="nlink">Skills</a></li>
-                <li><a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank" class="nlink nlink-ext">SOC Cmds ↗</a></li>
-                <li><a href="index.html#contact" class="nlink">Contact</a></li>
-            </ul>
-            <div class="nav-trail">
-                <div class="availability"><span class="av-dot"></span><span>Available</span></div>
-                <button class="burger" id="burger">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Hero -->
-    <div class="research-page-hero">
-        <h1><em class="ht-light">Research &amp;</em> <strong>Writing</strong></h1>
-        <p>Detection engineering, threat hunting, adversary tradecraft, and SOC operations — published on Medium.</p>
-        <a href="https://medium.com/@prashanth-pulisetti" target="_blank" rel="noopener noreferrer" class="medium-badge">
-            ↗ &nbsp;Follow on Medium
-        </a>
-    </div>
-
-    <!-- Blog Listing -->
-    <div class="research-main">
-        <div class="container">
-            <div class="research-topbar">
-                <p>Original research on detection engineering, threat hunting, and adversary tradecraft.</p>
-                <a href="https://medium.com/@prashanth-pulisetti" target="_blank" rel="noopener noreferrer">All posts on Medium ↗</a>
-            </div>
-            <div id="medium-posts">
-                <div class="research-placeholder">
-                    <span class="rph-label">// loading</span>
-                    <p>Fetching posts…</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-logo">Sai Prashanth Pulisetti</div>
-                <p class="footer-sub">Built to defend. Engineered to detect.</p>
-                <div class="footer-links">
-                    <a href="https://github.com/0xPrashanthSec" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/0xPrashanthSec" target="_blank">LinkedIn</a>
-                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank">Medium</a>
-                    <a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank">SOC Cmds</a>
-                </div>
-                <p class="footer-copy">© 2024 Sai Prashanth Pulisetti · All rights reserved</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="./script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./term.css">
     <script>
-    (function () {
-        var posts = [
-            {
-                title: "ClickFix + VLC DLL Sideloading: How Attackers Are Hiding RATs Inside a Signed Video Player",
-                date:  "Jun 20, 2026",
-                blurb: "Attackers combine the ClickFix social engineering lure with VLC DLL sideloading to inject RATs into the legitimately signed media player, evading endpoint controls that trust code-signed processes — covers the full attack chain, IOCs, and detection opportunities.",
-                tags:  ["DLL Sideloading", "RAT", "Defense Evasion"],
-                url:   "https://prashanth-pulisetti.medium.com/clickfix-vlc-dll-sideloading-how-attackers-are-hiding-rats-inside-a-signed-video-player-f10a61ba1079"
-            },
-            {
-                title: "BlueKit: The Phishing Kit That Makes MFA Irrelevant",
-                date:  "Jun 20, 2026",
-                blurb: "BlueKit is a commercial phishing-as-a-service platform that bypasses MFA by capturing session cookies via an Adversary-in-the-Middle engine — covers pixel-perfect brand templates, real-time credential theft, and how enterprises can detect and respond.",
-                tags:  ["Phishing", "MFA Bypass", "AiTM"],
-                url:   "https://prashanth-pulisetti.medium.com/bluekit-the-phishing-kit-that-makes-mfa-irrelevant-738fe67959d7"
-            },
-            {
-                title: "Hunting ADCS Attack Paths: Detecting ESC1–ESC6 Privilege Escalation in Active Directory",
-                date:  "Jun 18, 2026",
-                blurb: "ADCS misconfigurations let any domain user escalate to Domain Admin without touching a password. Covers the ESC1–ESC6 attack chains, 8 KQL detection queries, true/false positive guidance, and hardening actions.",
-                tags:  ["ADCS", "Active Directory", "Threat Hunting"],
-                url:   "https://medium.com/@prashanth-pulisetti/hunting-adcs-attack-paths-detecting-esc1-esc6-privilege-escalation-in-active-directory-4259ac0e46c4"
-            },
-            {
-                title: "Microsoft's New Centralized Defense: Blocking External Teams Users Directly from Defender Portal",
-                date:  "Dec 22, 2025",
-                blurb: "The Quiet Security Win That Changes How Admins Work — a look at how Microsoft now lets you block external Teams users centrally from the Defender portal without touching Exchange or Teams admin.",
-                tags:  ["Microsoft Defender", "Teams Security", "Detection"],
-                url:   "https://prashanth-pulisetti.medium.com/microsofts-new-centralized-defense-blocking-external-teams-users-directly-from-defender-portal-87022a9f7767"
-            },
-            {
-                title: "Oracle E-Business Suite Zero-Day Exploited in Clop Data Theft Attacks: CVE-2025-61882",
-                date:  "Oct 7, 2025",
-                blurb: "Oracle patched a critical zero-day after the notorious Clop ransomware group actively exploited it to exfiltrate data from enterprise EBS deployments — full exploitation timeline and detection guidance.",
-                tags:  ["CVE", "Oracle", "Ransomware"],
-                url:   "https://prashanth-pulisetti.medium.com/oracle-e-business-suite-zero-day-exploited-in-clop-data-theft-attacks-cve-2025-61882-73bff4e92545"
-            },
-            {
-                title: "CVE-2024-3400: Attackers Revive a Palo Alto GlobalProtect RCE — Exploitation and Detection",
-                date:  "Sep 30, 2025",
-                blurb: "In late September 2025 researchers observed a fresh surge in attacks targeting this critical Palo Alto GlobalProtect RCE. Covers the exploit chain, indicators, and Sigma/KQL detection rules.",
-                tags:  ["CVE", "Palo Alto", "Threat Hunting"],
-                url:   "https://prashanth-pulisetti.medium.com/cve-2024-3400-attackers-revive-a-palo-alto-globalprotect-rce-exploitation-and-detection-118eb578a3e3"
-            },
-            {
-                title: "Beware the Fake CAPTCHA: How Attackers Are Sneaking Malware Past Your Defenses",
-                date:  "Apr 7, 2025",
-                blurb: "Threat actors are abusing fake CAPTCHA prompts to trick users into executing malicious payloads. Breaks down the delivery chain, browser-based lures, and detection opportunities for SOC teams.",
-                tags:  ["Malware", "Phishing", "Defense Evasion"],
-                url:   "https://prashanth-pulisetti.medium.com/beware-the-fake-captcha-how-attackers-are-sneaking-malware-past-your-defenses-80b3d65d9175"
-            },
-            {
-                title: "PoisonSeed: The Phishing Campaign Hijacking CRM Platforms to Steal Crypto Secrets",
-                date:  "Apr 5, 2025",
-                blurb: "PoisonSeed compromises CRM and bulk email providers to blast seed-phrase phishing at scale, pivoting from enterprise access to cryptocurrency theft — TTP breakdown and detection strategy.",
-                tags:  ["Phishing", "CRM", "Crypto Threat"],
-                url:   "https://prashanth-pulisetti.medium.com/poisonseed-the-phishing-campaign-hijacking-crm-platforms-to-steal-crypto-secrets-a6bfbae2c625"
-            },
-            {
-                title: "From Email Chaos to Clarity: How Proton Unlimited and SimpleLogin Transformed My Inbox",
-                date:  "Apr 4, 2025",
-                blurb: "A practitioner's take on using Proton Mail and SimpleLogin aliases to eliminate spam, protect identity, and regain control of personal email infrastructure.",
-                tags:  ["Privacy", "Email Security", "Proton"],
-                url:   "https://prashanth-pulisetti.medium.com/from-email-chaos-to-clarity-how-proton-unlimited-and-simplelogin-transformed-my-inbox-8c44073a3f7b"
-            },
-            {
-                title: "Detecting Malicious Guest Accounts and Remote Monitoring Tool (RMM) Deployments in Microsoft Teams",
-                date:  "Nov 13, 2024",
-                blurb: "Attackers are abusing Teams guest invitations to drop RMM tooling inside the corporate perimeter. Covers detection logic, KQL queries, and the behavioural patterns that give it away.",
-                tags:  ["Detection", "Microsoft Teams", "RMM"],
-                url:   "https://prashanth-pulisetti.medium.com/detecting-malicious-guest-accounts-and-remote-monitoring-tool-rmm-deployments-in-microsoft-teams-d59885b2743d"
-            },
-            {
-                title: "How to Simulate Network-Based Data Transfer in Small Chunks",
-                date:  "Feb 26, 2024",
-                blurb: "A PowerShell technique for simulating low-and-slow data exfiltration in small network chunks — useful for validating DLP and detection controls before adversaries probe for the same gap.",
-                tags:  ["PowerShell", "Detection Engineering", "Network"],
-                url:   "https://prashanth-pulisetti.medium.com/how-to-simulate-network-based-data-transfer-in-small-chunks-e9f0e36782d5"
-            },
-            {
-                title: "Remote Access Tool — AnyDesk Execution With Known Revoked Signing Certificate",
-                date:  "Feb 8, 2024",
-                blurb: "Analysis of threat actors deploying AnyDesk signed with a known-revoked certificate to bypass endpoint controls — covers the certificate chain abuse, detection signatures, and response playbook.",
-                tags:  ["RAT", "AnyDesk", "Endpoint Detection"],
-                url:   "https://prashanth-pulisetti.medium.com/remote-access-tool-anydesk-execution-with-known-revoked-signing-certificate-15ee79a14406"
-            }
-        ];
-
-        var wrap = document.getElementById('medium-posts');
-        if (!wrap) return;
-
-        var grid = document.createElement('div');
-        grid.className = 'blogs-grid';
-
-        posts.forEach(function (post) {
-            var card       = document.createElement('a');
-            card.href      = post.url;
-            card.target    = '_blank';
-            card.rel       = 'noopener noreferrer';
-            card.className = 'bcard';
-
-            card.innerHTML =
-                '<div class="bcard-meta">' +
-                    '<span class="bcat">Medium</span>' +
-                    '<span class="bdt">' + post.date + '</span>' +
-                '</div>' +
-                '<h3>' + post.title + '</h3>' +
-                '<p>' + post.blurb + '</p>' +
-                '<div class="btags">' +
-                    post.tags.map(function (t) { return '<span>' + t + '</span>'; }).join('') +
-                '</div>' +
-                '<span class="bread">Read on Medium →</span>';
-
-            grid.appendChild(card);
-        });
-
-        wrap.innerHTML = '';
-        wrap.appendChild(grid);
-    })();
+        (function () {
+            var d = document.documentElement, t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+            d.classList.replace('no-js', 'js');
+        })();
     </script>
+</head>
+<body class="page-research">
+    <div class="crt" aria-hidden="true"></div>
+
+    <header class="chrome" id="chrome">
+        <div class="chrome-left">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <a href="index.html" class="chrome-title">root@0xPrashanthSec: <span>~/research</span></a>
+        </div>
+        <nav class="tabs" aria-label="Sections">
+            <a href="index.html#about" class="tab">~/about</a>
+            <a href="index.html#operation" class="tab">~/ops</a>
+            <a href="index.html#projects" class="tab">~/projects</a>
+            <a href="index.html#detections" class="tab">~/detections</a>
+            <a href="index.html#arsenal" class="tab">~/arsenal</a>
+            <a href="index.html#recognition" class="tab">~/hof</a>
+            <a href="resume.html" class="tab">~/resume</a>
+            <a href="research.html" class="tab active" aria-current="page">~/research</a>
+            <a href="index.html#contact" class="tab">~/contact</a>
+        </nav>
+        <div class="chrome-right" aria-hidden="true">
+            <span class="meter" id="meter">[..........] 00%</span>
+            <span class="clock" id="clock">IST --:--:--</span>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme"><b>--theme</b> dark</button>
+    </header>
+
+    <main class="session">
+
+        <section class="blk" data-auto>
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~/research</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="ls -lt ./published --source medium"></span></span></div>
+            <div class="out">
+                <h1 class="ln h"><span class="hn">R</span>Research &amp; <em class="h-em">Writing</em></h1>
+                <p class="ln prose-one">Original research on detection engineering, threat hunting, adversary tradecraft and SOC operations, with the queries to go with it.</p>
+                <p class="ln dim">total 12 · sorted newest first</p>
+                <ul class="posts">
+                    <li class="ln post">
+                        <span class="post-date">Jun 20, 2026</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/clickfix-vlc-dll-sideloading-how-attackers-are-hiding-rats-inside-a-signed-video-player-f10a61ba1079" target="_blank" rel="noopener">ClickFix + VLC DLL Sideloading: How Attackers Are Hiding RATs Inside a Signed Video Player <span class="arrow">↗</span></a>
+                            <p class="post-blurb">Attackers combine the ClickFix social engineering lure with VLC DLL sideloading to inject RATs into the legitimately signed media player, evading endpoint controls that trust code-signed processes — covers the full attack chain, IOCs, and detection opportunities.</p>
+                            <p class="post-tags"><span class="tag">#dll-sideloading</span> <span class="tag">#rat</span> <span class="tag">#defense-evasion</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Jun 20, 2026</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/bluekit-the-phishing-kit-that-makes-mfa-irrelevant-738fe67959d7" target="_blank" rel="noopener">BlueKit: The Phishing Kit That Makes MFA Irrelevant <span class="arrow">↗</span></a>
+                            <p class="post-blurb">BlueKit is a commercial phishing-as-a-service platform that bypasses MFA by capturing session cookies via an Adversary-in-the-Middle engine — covers pixel-perfect brand templates, real-time credential theft, and how enterprises can detect and respond.</p>
+                            <p class="post-tags"><span class="tag">#phishing</span> <span class="tag">#mfa-bypass</span> <span class="tag">#aitm</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Jun 18, 2026</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://medium.com/@prashanth-pulisetti/hunting-adcs-attack-paths-detecting-esc1-esc6-privilege-escalation-in-active-directory-4259ac0e46c4" target="_blank" rel="noopener">Hunting ADCS Attack Paths: Detecting ESC1–ESC6 Privilege Escalation in Active Directory <span class="arrow">↗</span></a>
+                            <p class="post-blurb">ADCS misconfigurations let any domain user escalate to Domain Admin without touching a password. Covers the ESC1–ESC6 attack chains, 8 KQL detection queries, true/false positive guidance, and hardening actions.</p>
+                            <p class="post-tags"><span class="tag">#adcs</span> <span class="tag">#active-directory</span> <span class="tag">#threat-hunting</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Dec 22, 2025</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/microsofts-new-centralized-defense-blocking-external-teams-users-directly-from-defender-portal-87022a9f7767" target="_blank" rel="noopener">Microsoft&#x27;s New Centralized Defense: Blocking External Teams Users Directly from Defender Portal <span class="arrow">↗</span></a>
+                            <p class="post-blurb">The Quiet Security Win That Changes How Admins Work — a look at how Microsoft now lets you block external Teams users centrally from the Defender portal without touching Exchange or Teams admin.</p>
+                            <p class="post-tags"><span class="tag">#microsoft-defender</span> <span class="tag">#teams-security</span> <span class="tag">#detection</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Oct 7, 2025</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/oracle-e-business-suite-zero-day-exploited-in-clop-data-theft-attacks-cve-2025-61882-73bff4e92545" target="_blank" rel="noopener">Oracle E-Business Suite Zero-Day Exploited in Clop Data Theft Attacks: CVE-2025-61882 <span class="arrow">↗</span></a>
+                            <p class="post-blurb">Oracle patched a critical zero-day after the notorious Clop ransomware group actively exploited it to exfiltrate data from enterprise EBS deployments — full exploitation timeline and detection guidance.</p>
+                            <p class="post-tags"><span class="tag">#cve</span> <span class="tag">#oracle</span> <span class="tag">#ransomware</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Sep 30, 2025</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/cve-2024-3400-attackers-revive-a-palo-alto-globalprotect-rce-exploitation-and-detection-118eb578a3e3" target="_blank" rel="noopener">CVE-2024-3400: Attackers Revive a Palo Alto GlobalProtect RCE — Exploitation and Detection <span class="arrow">↗</span></a>
+                            <p class="post-blurb">In late September 2025 researchers observed a fresh surge in attacks targeting this critical Palo Alto GlobalProtect RCE. Covers the exploit chain, indicators, and Sigma/KQL detection rules.</p>
+                            <p class="post-tags"><span class="tag">#cve</span> <span class="tag">#palo-alto</span> <span class="tag">#threat-hunting</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Apr 7, 2025</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/beware-the-fake-captcha-how-attackers-are-sneaking-malware-past-your-defenses-80b3d65d9175" target="_blank" rel="noopener">Beware the Fake CAPTCHA: How Attackers Are Sneaking Malware Past Your Defenses <span class="arrow">↗</span></a>
+                            <p class="post-blurb">Threat actors are abusing fake CAPTCHA prompts to trick users into executing malicious payloads. Breaks down the delivery chain, browser-based lures, and detection opportunities for SOC teams.</p>
+                            <p class="post-tags"><span class="tag">#malware</span> <span class="tag">#phishing</span> <span class="tag">#defense-evasion</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Apr 5, 2025</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/poisonseed-the-phishing-campaign-hijacking-crm-platforms-to-steal-crypto-secrets-a6bfbae2c625" target="_blank" rel="noopener">PoisonSeed: The Phishing Campaign Hijacking CRM Platforms to Steal Crypto Secrets <span class="arrow">↗</span></a>
+                            <p class="post-blurb">PoisonSeed compromises CRM and bulk email providers to blast seed-phrase phishing at scale, pivoting from enterprise access to cryptocurrency theft — TTP breakdown and detection strategy.</p>
+                            <p class="post-tags"><span class="tag">#phishing</span> <span class="tag">#crm</span> <span class="tag">#crypto-threat</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Apr 4, 2025</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/from-email-chaos-to-clarity-how-proton-unlimited-and-simplelogin-transformed-my-inbox-8c44073a3f7b" target="_blank" rel="noopener">From Email Chaos to Clarity: How Proton Unlimited and SimpleLogin Transformed My Inbox <span class="arrow">↗</span></a>
+                            <p class="post-blurb">A practitioner&#x27;s take on using Proton Mail and SimpleLogin aliases to eliminate spam, protect identity, and regain control of personal email infrastructure.</p>
+                            <p class="post-tags"><span class="tag">#privacy</span> <span class="tag">#email-security</span> <span class="tag">#proton</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Nov 13, 2024</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/detecting-malicious-guest-accounts-and-remote-monitoring-tool-rmm-deployments-in-microsoft-teams-d59885b2743d" target="_blank" rel="noopener">Detecting Malicious Guest Accounts and Remote Monitoring Tool (RMM) Deployments in Microsoft Teams <span class="arrow">↗</span></a>
+                            <p class="post-blurb">Attackers are abusing Teams guest invitations to drop RMM tooling inside the corporate perimeter. Covers detection logic, KQL queries, and the behavioural patterns that give it away.</p>
+                            <p class="post-tags"><span class="tag">#detection</span> <span class="tag">#microsoft-teams</span> <span class="tag">#rmm</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Feb 26, 2024</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/how-to-simulate-network-based-data-transfer-in-small-chunks-e9f0e36782d5" target="_blank" rel="noopener">How to Simulate Network-Based Data Transfer in Small Chunks <span class="arrow">↗</span></a>
+                            <p class="post-blurb">A PowerShell technique for simulating low-and-slow data exfiltration in small network chunks — useful for validating DLP and detection controls before adversaries probe for the same gap.</p>
+                            <p class="post-tags"><span class="tag">#powershell</span> <span class="tag">#detection-engineering</span> <span class="tag">#network</span></p>
+                        </div>
+                    </li>
+                    <li class="ln post">
+                        <span class="post-date">Feb 8, 2024</span>
+                        <div class="post-main">
+                            <a class="post-title" href="https://prashanth-pulisetti.medium.com/remote-access-tool-anydesk-execution-with-known-revoked-signing-certificate-15ee79a14406" target="_blank" rel="noopener">Remote Access Tool — AnyDesk Execution With Known Revoked Signing Certificate <span class="arrow">↗</span></a>
+                            <p class="post-blurb">Analysis of threat actors deploying AnyDesk signed with a known-revoked certificate to bypass endpoint controls — covers the certificate chain abuse, detection signatures, and response playbook.</p>
+                            <p class="post-tags"><span class="tag">#rat</span> <span class="tag">#anydesk</span> <span class="tag">#endpoint-detection</span></p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="ln actions">
+                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank" rel="noopener" class="act act-red">./follow --medium ↗</a>
+                    <a href="index.html#detections" class="act">./view_detections</a>
+                </p>
+            </div>
+        </section>
+
+        <footer class="blk foot">
+            <div class="cmdline"><span class="ps2 solo"><b>└─</b><em>#</em> <span class="cmd" data-cmd="cd ~"></span></span></div>
+            <div class="out">
+                <p class="ln dim"><a href="index.html" class="r-back">back to portfolio</a> · © <span id="year">2026</span> Sai Prashanth Pulisetti<span class="caret">_</span></p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="./term.js"></script>
 </body>
 </html>

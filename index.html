@@ -1,322 +1,326 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sai Prashanth Pulisetti — Cybersecurity Specialist, SOC Lead, Detection Engineer. CRTE | CRTO | CHFI">
-    <title>Sai Prashanth — Cybersecurity Specialist</title>
+    <meta name="description" content="Sai Prashanth Pulisetti — SOC Manager, Detection Engineer and Purple Teamer. 7.5+ years in security operations. CRTE | CRTO | CRTP | CHFI">
+    <meta name="theme-color" content="#0d0c0b">
+    <title>Sai Prashanth — SOC Manager · Detection Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./term.css">
+    <script>
+        (function () {
+            var d = document.documentElement, t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            d.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+            d.classList.replace('no-js', 'js');
+        })();
+    </script>
 </head>
 <body>
+    <div class="crt" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-inner">
-            <a href="#home" class="nav-brand">0xPrashanthSec</a>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="#home" class="nlink">Home</a></li>
-                <li><a href="#about" class="nlink">About</a></li>
-                <li><a href="research.html" class="nlink">Research</a></li>
-                <li><a href="#projects" class="nlink">Projects</a></li>
-                <li><a href="#arsenal" class="nlink">Skills</a></li>
-                <li><a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank" class="nlink nlink-ext">SOC Cmds ↗</a></li>
-                <li><a href="#contact" class="nlink">Contact</a></li>
-            </ul>
-            <div class="nav-trail">
-                <div class="availability"><span class="av-dot"></span><span>Available</span></div>
-                <button class="burger" id="burger">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+    <!-- ===== Window chrome / navigation ===== -->
+    <header class="chrome" id="chrome">
+        <div class="chrome-left">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <a href="#home" class="chrome-title">root@0xPrashanthSec: <span>~</span></a>
         </div>
-    </nav>
-
-    <!-- ===== HERO ===== -->
-    <section id="home" class="hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero-inner">
-            <div class="hero-left">
-                <div class="hero-eyebrow">
-                    <span class="eyebrow-line"></span>
-                    <span>SOC Lead &nbsp;·&nbsp; Detection Engineer &nbsp;·&nbsp; Purple Teamer</span>
-                </div>
-                <h1 class="hero-title">
-                    <em class="ht-light">Sai Prashanth</em>
-                    <strong class="ht-bold">Pulisetti</strong>
-                </h1>
-                <div class="hero-role">
-                    <span class="hr-arrow">→</span>
-                    <span class="hr-typed" id="typed-text"></span><span class="hr-caret">|</span>
-                </div>
-                <p class="hero-bio">6+ years building detection frameworks, leading SOC operations through critical incidents, and applying adversary simulation to sharpen defenses. Oracle Hall of Fame. NCIIPC ×15.</p>
-                <div class="certs">
-                    <span class="cert">CRTE</span><span class="cert">CRTO</span><span class="cert">CRTP</span>
-                    <span class="cert">CHFI</span><span class="cert">eJPT</span><span class="cert">SOAR</span>
-                </div>
-                <div class="hero-btns">
-                    <a href="research.html" class="hbtn hbtn-dark">Read Research</a>
-                    <a href="#projects" class="hbtn hbtn-outline">View Projects</a>
-                    <a href="#contact" class="hbtn hbtn-ghost">Contact</a>
-                </div>
-            </div>
-            <div class="hero-right">
-                <div class="terminal">
-                    <div class="term-header">
-                        <div class="term-traffic">
-                            <span class="tt close"></span><span class="tt min"></span><span class="tt max"></span>
-                        </div>
-                        <span class="term-name">bash — soc@defender:~</span>
-                        <span class="term-tag">ssh 10.0.0.1</span>
-                    </div>
-                    <div class="term-body">
-                        <p><span class="tp">$ </span><span class="tc">whoami</span></p>
-                        <p class="to">sai_prashanth_pulisetti</p>
-                        <p class="to dim"># SOC Lead · Detection Engineer · Purple Teamer</p>
-                        <br>
-                        <p><span class="tp">$ </span><span class="tc">cat expertise.conf</span></p>
-                        <p class="to em">▸&nbsp; Threat Hunting &amp; DFIR</p>
-                        <p class="to em">▸&nbsp; SIEM Engineering (Elastic · Sentinel · Splunk)</p>
-                        <p class="to em">▸&nbsp; Malware Analysis &amp; IOC Extraction</p>
-                        <p class="to em">▸&nbsp; Purple Team Ops — CRTE / CRTO</p>
-                        <p class="to em">▸&nbsp; Sigma · YARA · KQL · EQL · SPL</p>
-                        <br>
-                        <p><span class="tp">$ </span><span class="tc">ls ./recognition/</span></p>
-                        <p class="to acc">oracle_hall_of_fame.txt</p>
-                        <p class="to acc">nciipc_15_disclosures/</p>
-                        <p class="to acc">top_performer_2022_2023.award</p>
-                        <p class="to acc">300_detection_rules.sigma</p>
-                        <br>
-                        <p><span class="tp">$ </span><span class="blink-cur">▊</span></p>
-                    </div>
-                </div>
-            </div>
+        <nav class="tabs" aria-label="Sections">
+            <a href="#about" class="tab">~/about</a>
+            <a href="#operation" class="tab">~/ops</a>
+            <a href="#projects" class="tab">~/projects</a>
+            <a href="#detections" class="tab">~/detections</a>
+            <a href="#arsenal" class="tab">~/arsenal</a>
+            <a href="#recognition" class="tab">~/hof</a>
+            <a href="resume.html" class="tab">~/resume</a>
+            <a href="research.html" class="tab">~/research</a>
+            <a href="#contact" class="tab">~/contact</a>
+        </nav>
+        <div class="chrome-right" aria-hidden="true">
+            <span class="meter" id="meter">[..........] 00%</span>
+            <span class="clock" id="clock">IST --:--:--</span>
         </div>
-    </section>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme"><b>--theme</b> dark</button>
+    </header>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section bg-light">
-        <div class="container">
-            <div class="sec-hd">
-                <span class="sec-tag">// about_me</span>
-                <h2 class="sec-title">The Operator</h2>
-                <div class="sec-rule"></div>
+    <main class="session">
+
+        <!-- ===== BOOT / HERO ===== -->
+        <section id="home" class="blk hero" data-auto>
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="ssh operator@soc --identity prashanth"></span></span></div>
+            <div class="out">
+                <p class="ln sys">Authenticating with public key "prashanth@soc"… <span class="ok">granted</span></p>
+                <p class="ln sys">Last login: <span id="last-login">today</span> from 10.0.0.1 · session encrypted · <span class="red">audit logging on</span></p>
+                <h1 class="ln name"><span class="name-a">Sai Prashanth</span><span class="name-b">Pulisetti<span class="caret">_</span></span></h1>
+                <p class="ln role"><span class="red">›</span> <span id="role"></span><span class="caret thin">▌</span></p>
+                <p class="ln bio">7.5+ years in security operations. I run a SOC, build detection at scale, and think like the adversary to catch what textbooks miss. Oracle Hall of Fame. NCIIPC ×15.</p>
+                <p class="ln certs"><span class="dim">certs:</span> <span class="cert">CRTE</span><span class="cert">CRTO</span><span class="cert">CRTP</span><span class="cert">CHFI</span><span class="cert">eJPT</span></p>
+                <p class="ln actions">
+                    <a href="research.html" class="act act-red">./read_research</a>
+                    <a href="resume.html" class="act">./resume</a>
+                    <a href="#operation" class="act">./run_case</a>
+                    <a href="#contact" class="act">./contact</a>
+                </p>
             </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I'm a cybersecurity professional with <strong>6+ years</strong> leading Security Operations Centers and building detection frameworks at scale. I've handled everything from P1 ransomware incidents at 3 AM to architecting enterprise-grade SIEM deployments from scratch.</p>
-                    <p>My edge is bridging red and blue. Holding <strong>CRTE, CRTO and CRTP</strong> certifications, I apply adversary simulation thinking to write detection logic that catches real-world techniques — not just textbook ones.</p>
-                    <p>Beyond operations, I contribute through open-source tooling, <strong>15 responsible disclosures to NCIIPC</strong>, a critical Oracle vulnerability report, and published research on threat hunting methodologies.</p>
-                    <div class="about-links">
-                        <a href="https://prashanth.blog" target="_blank" class="alink">📖 Blog</a>
-                        <a href="https://linkedin.com/in/0xPrashanthSec" target="_blank" class="alink">💼 LinkedIn</a>
-                        <a href="https://github.com/0xPrashanthSec" target="_blank" class="alink">⌨ GitHub</a>
-                    </div>
+            <a href="#about" class="scroll-cue" aria-label="Scroll to about">scroll ↓ to continue the session</a>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="blk">
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~/about</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="cat whoami.md"></span></span></div>
+            <div class="out">
+                <h2 class="ln h"><span class="hn">01</span>The Operator</h2>
+                <div class="prose">
+                    <p class="ln">I'm a security operations leader with <strong>7.5+ years</strong> in Security Operations Centers. Since <strong>March 2026</strong> I've managed the SOC: the people, the process and the detection program behind them. Before that I built detection rules from scratch: emulating attacker behavior with <strong>Atomic Red Team</strong> and <strong>CALDERA</strong>, validating what fires, and mapping every rule to the <strong>MITRE ATT&amp;CK</strong> framework.</p>
+                    <p class="ln">My edge is bridging red and blue. With <strong>CRTE, CRTO and CRTP</strong>, I apply adversary simulation thinking to write detection logic that catches real-world techniques, not just textbook ones.</p>
+                    <p class="ln">Beyond operations I contribute open-source tooling and detection rules, <strong>15 responsible disclosures to NCIIPC</strong>, a critical Oracle vulnerability report, and published research on threat hunting.</p>
                 </div>
-                <div class="about-side">
-                    <div class="profile-box">
-                        <div class="pb-head">Profile</div>
-                        <div class="pb-body">
-                            <div class="pb-row"><span class="pb-k">Location</span><span class="pb-v">Hyderabad, Telangana, India</span></div>
-                            <div class="pb-row"><span class="pb-k">Role</span><span class="pb-v">SOC Lead / Detection Engineer</span></div>
-                            <div class="pb-row"><span class="pb-k">Education</span><span class="pb-v">M.Sc. Cyber Security · IIITMK</span></div>
-                            <div class="pb-row"><span class="pb-k">Focus</span><span class="pb-v">Threat Hunting, SIEM Engineering</span></div>
-                            <div class="pb-row"><span class="pb-k">Status</span><span class="pb-v status-ok">Open to collaboration</span></div>
+            </div>
+        </section>
+
+        <section class="blk">
+            <div class="cmdline"><span class="ps2 solo"><b>└─</b><em>#</em> <span class="cmd" data-cmd="cat profile.conf"></span></span></div>
+            <div class="out kv">
+                <p class="ln"><span class="k">location</span><span class="v">Hyderabad, Telangana, India</span></p>
+                <p class="ln"><span class="k">role</span><span class="v">SOC Manager · Detection Engineer</span></p>
+                <p class="ln"><span class="k">education</span><span class="v">M.Sc. Cyber Security · IIITMK</span></p>
+                <p class="ln"><span class="k">focus</span><span class="v">Threat hunting, SIEM engineering, SOC leadership</span></p>
+                <p class="ln"><span class="k">status</span><span class="v ok">open to collaboration</span></p>
+            </div>
+        </section>
+
+        <section class="blk">
+            <div class="cmdline"><span class="ps2 solo"><b>└─</b><em>#</em> <span class="cmd" data-cmd="git log --graph --oneline career"></span></span></div>
+            <div class="out gitlog">
+                <p class="ln"><span class="g">*</span> <span class="sha">a7f3c21</span> <span class="when">Mar 2026 – now</span> <span class="what">SOC Manager <span class="ref">(HEAD -&gt; main)</span></span> <span class="org">Eze Castle Integration</span></p>
+                <p class="ln"><span class="g">*</span> <span class="sha">5d09be4</span> <span class="when">2025 – Feb 2026</span> <span class="what">SOC Team Lead</span> <span class="org">Eze Castle Integration</span></p>
+                <p class="ln"><span class="g">*</span> <span class="sha">c1e88a0</span> <span class="when">2022 – 2025</span> <span class="what">SOC Specialist</span> <span class="org">Eze Castle Integration</span></p>
+                <p class="ln"><span class="g">*</span> <span class="sha">8e2f61b</span> <span class="when">2021 – 2022</span> <span class="what">SOC Engineer</span> <span class="org">Eze Castle Integration</span></p>
+                <p class="ln"><span class="g">*</span> <span class="sha">0b4417d</span> <span class="when">Jul 2019 – 2021</span> <span class="what">SOC Analyst</span> <span class="org">Eze Castle Integration</span></p>
+                <p class="ln"><span class="g">*</span> <span class="sha dim">0000000</span> <span class="dim">initial commit — M.Sc. Cyber Security, IIITMK</span></p>
+            </div>
+        </section>
+
+        <!-- ===== LIVE OPERATION (scroll-driven) ===== -->
+        <section id="operation" class="op" aria-labelledby="op-title">
+            <div class="op-track" id="op-track">
+                <div class="op-sticky">
+                    <div class="op-grid">
+                        <div class="op-left">
+                            <p class="op-cmd"><b>└─</b><em>#</em> ./run_case.sh IR-2047</p>
+                            <h2 class="op-title" id="op-title"><span class="hn">02</span>Anatomy of a <em>hunt</em></h2>
+                            <p class="op-lede">Keep scrolling: you're driving the keyboard. One case, alert to containment, the way it runs on shift.<br><span class="op-sim">simulated walkthrough · hosts, IPs and case IDs are fictional</span></p>
+                            <ol class="op-stages" id="op-stages">
+                                <li class="op-stage"><span class="op-num">01</span><div><h3>Triage</h3><p>An alert is a lead, not a verdict. Read the raw event first.</p></div></li>
+                                <li class="op-stage"><span class="op-num">02</span><div><h3>Hunt</h3><p>One host or a campaign? Scope it with ES|QL across every endpoint.</p></div></li>
+                                <li class="op-stage"><span class="op-num">03</span><div><h3>Analyze</h3><p>Decode the payload, pull the IOCs, prove it with YARA.</p></div></li>
+                                <li class="op-stage"><span class="op-num">04</span><div><h3>Detect</h3><p>Turn the finding into a rule. Sigma in, tested EQL out.</p></div></li>
+                                <li class="op-stage"><span class="op-num">05</span><div><h3>Contain</h3><p>Isolate, block, document. Then measure how fast.</p></div></li>
+                            </ol>
                         </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="tlb-head">Career Timeline</div>
-                        <div class="tl-track">
-                            <div class="tl-item">
-                                <div class="tl-dot"></div>
-                                <div class="tl-body">
-                                    <span class="tl-date">2022 – Present</span>
-                                    <span class="tl-role">SOC Lead &amp; Detection Engineer</span>
-                                    <span class="tl-org">Eze Castle Integration</span>
+                        <div class="op-right">
+                            <div class="op-term">
+                                <div class="op-bar">
+                                    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                                    <span class="op-name">zsh — hunt@soc-01: ~/cases/IR-2047 (simulated)</span>
+                                    <span class="op-ttp" id="op-ttp">T1059.001</span>
                                 </div>
-                            </div>
-                            <div class="tl-item">
-                                <div class="tl-dot"></div>
-                                <div class="tl-body">
-                                    <span class="tl-date">2020 – 2022</span>
-                                    <span class="tl-role">Senior SOC Analyst</span>
-                                    <span class="tl-org">Security Operations</span>
-                                </div>
-                            </div>
-                            <div class="tl-item">
-                                <div class="tl-dot"></div>
-                                <div class="tl-body">
-                                    <span class="tl-date">2018 – 2020</span>
-                                    <span class="tl-role">SOC Analyst</span>
-                                    <span class="tl-org">Threat Monitoring &amp; IR</span>
+                                <div class="op-body" id="op-body"></div>
+                                <div class="op-status">
+                                    <span class="op-led" id="op-led"></span>
+                                    <span id="op-state">CASE IR-2047 · OPEN</span>
+                                    <span class="op-pct" id="op-pct">00%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <div class="sec-hd">
-                <span class="sec-tag">// featured_projects</span>
-                <h2 class="sec-title">Projects</h2>
-                <div class="sec-rule"></div>
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects" class="blk">
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~/projects</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="ls -la --describe ."></span></span></div>
+            <div class="out">
+                <h2 class="ln h"><span class="hn">03</span>Projects</h2>
+                <p class="ln dim">total 2 · drwxr-xr-x  tools built for defenders</p>
+                <ul class="ls">
+                    <li class="ln"><span class="perm">-rwxr-xr-x</span><a class="fname" href="https://0xprashanthsec.github.io/IOCQuery/" target="_blank" rel="noopener">ioc-hunter <span class="arrow">↗</span></a><span class="desc">Extracts IOCs from threat-intel blogs and turns them into Elastic SIEM hunting queries.</span><span class="lang">python · elastic · osint</span></li>
+                    <li class="ln"><span class="perm">-rw-r-----</span><span class="fname nolink">elastic-use-case-library</span><span class="desc">300+ detection rules from real malware samples and actor TTPs, tuned for low false positives, mapped to MITRE ATT&amp;CK.</span><span class="lang">elastic · sigma · mitre</span></li>
+                </ul>
             </div>
-            <div class="proj-grid main-proj">
-                <div class="pcard">
-                    <div class="pcard-top"><span class="pnum">01</span><div class="chips"><span class="chip">JavaScript</span><span class="chip">Sigma</span><span class="chip">KQL</span></div></div>
-                    <h3>Sigma-to-SIEM Converter</h3>
-                    <p>Converts Sigma detection rules into Elastic ECS-aligned queries and Azure Sentinel KQL — bridging community rule formats and production SIEM deployment with zero manual conversion effort.</p>
-                    <ul class="pfeatures"><li>Automates ECS-aligned query generation</li><li>Multi-platform: Elastic and Azure Sentinel</li><li>Bulk rule conversion workflow support</li><li>Speeds up detection rule deployment significantly</li></ul>
-                    <div class="pcard-foot"><a href="https://sigmahqtoecs.itspulisetti.workers.dev/" target="_blank" class="pcta">Live Demo ↗</a></div>
-                </div>
-                <div class="pcard">
-                    <div class="pcard-top"><span class="pnum">02</span><div class="chips"><span class="chip">Python</span><span class="chip">Elastic</span><span class="chip">OSINT</span></div></div>
-                    <h3>IOC Hunter</h3>
-                    <p>Extracts Indicators of Compromise from open-source threat intelligence blogs and converts them automatically into Elastic SIEM-ready hunting queries for real-time detection.</p>
-                    <ul class="pfeatures"><li>Automated IOC extraction from threat intel blogs</li><li>Direct Elastic SIEM query generation</li><li>Converts raw OSINT into actionable hunt rules</li><li>Accelerates threat detection onboarding</li></ul>
-                    <div class="pcard-foot"><a href="https://0xprashanthsec.github.io/IOCQuery/" target="_blank" class="pcta">Live Demo ↗</a></div>
-                </div>
-                <div class="pcard">
-                    <div class="pcard-top"><span class="pnum">03</span><div class="chips"><span class="chip">Elastic</span><span class="chip">Sigma</span><span class="chip">MITRE</span></div></div>
-                    <h3>Elastic SIEM Use Case Library</h3>
-                    <p>300+ custom detection rules authored from real malware samples, threat actor TTP research, and enterprise SOC operational experience across financial sector environments.</p>
-                    <ul class="pfeatures"><li>300+ custom detection rules authored</li><li>Based on real malware samples and actor TTPs</li><li>Tuned to minimize false positives at scale</li><li>Full MITRE ATT&CK framework coverage</li></ul>
-                    <div class="pcard-foot"><span class="plabel">Enterprise / Internal</span></div>
-                </div>
-            </div>
-            <div class="mini-section">
-                <h3 class="mini-heading">Additional Tools</h3>
-                <div class="proj-grid mini-proj">
-                    <div class="pcard mini-pcard">
-                        <div class="pcard-top"><span class="pnum">04</span><div class="chips"><span class="chip">Python</span><span class="chip">Email Security</span></div></div>
-                        <h3>Email Analyzer</h3>
-                        <p>Parses email headers, detects phishing patterns, and extracts threat intelligence for SOC triage workflows.</p>
-                        <div class="pcard-foot"><a href="https://phishscopev.vercel.app/" target="_blank" class="pcta ghost">Live Demo ↗</a></div>
-                    </div>
-                    <div class="pcard mini-pcard">
-                        <div class="pcard-top"><span class="pnum">05</span><div class="chips"><span class="chip">TypeScript</span><span class="chip">Obsidian</span></div></div>
-                        <h3>Password Audit Plugin</h3>
-                        <p>Obsidian plugin for password strength analysis, HIBP breach checking, and secure password generation.</p>
-                        <div class="pcard-foot"><a href="https://github.com/0xPrashanthSec/password-audit" target="_blank" class="pcta ghost">GitHub ↗</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== ARSENAL ===== -->
-    <section id="arsenal" class="section bg-white">
-        <div class="container">
-            <div class="sec-hd">
-                <span class="sec-tag">// technical_stack</span>
-                <h2 class="sec-title">Skills &amp; Arsenal</h2>
-                <div class="sec-rule"></div>
+        <!-- ===== DETECTIONS (public samples) ===== -->
+        <section id="detections" class="blk">
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~/detections</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="ls ./rules --public | head -6"></span></span></div>
+            <div class="out">
+                <h2 class="ln h"><span class="hn">04</span>Detections</h2>
+                <p class="ln dim">6 of 300+ rules, shared as public samples · select a rule to cat it</p>
+                <ul class="dets">
+                    <li class="ln">
+                        <details class="det">
+                            <summary><span class="sev high">HIGH</span><span class="det-file">java_child_download_encoded.toml</span><span class="det-name">Java Child Process with Download or Encoded Command</span><span class="det-meta">EQL · windows</span></summary>
+                            <div class="det-body">
+                                <p class="det-desc">Identifies a Java process directly launching a Windows shell or a living-off-the-land utility whose command line contains payload-retrieval, encoded-execution or discovery characteristics. Exploitation of Java applications and services (for example deserialization, expression-injection or JVM vulnerabilities such as CVE-2026-114938) commonly results in the JVM spawning a shell to download and run a second-stage payload.</p>
+                                <p class="det-mitre"><span class="dim">mitre =</span> T1059.001 PowerShell · T1059.003 Windows Command Shell · T1190 Exploit Public-Facing Application · T1105 Ingress Tool Transfer</p>
+                                <div class="det-code"><button type="button" class="copy" aria-label="Copy query">copy</button><pre><code>process where host.os.type == &quot;windows&quot; and event.type == &quot;start&quot; and
+  process.parent.name : (&quot;java.exe&quot;, &quot;javaw.exe&quot;) and
+  (
+    process.name : (
+      &quot;cmd.exe&quot;, &quot;powershell.exe&quot;, &quot;pwsh.exe&quot;, &quot;certutil.exe&quot;, &quot;bitsadmin.exe&quot;, &quot;curl.exe&quot;,
+      &quot;mshta.exe&quot;, &quot;rundll32.exe&quot;, &quot;regsvr32.exe&quot;, &quot;wscript.exe&quot;, &quot;cscript.exe&quot;
+    ) or
+    ?process.pe.original_file_name : (
+      &quot;Cmd.Exe&quot;, &quot;PowerShell.EXE&quot;, &quot;pwsh.dll&quot;, &quot;CertUtil.exe&quot;, &quot;bitsadmin.exe&quot;, &quot;curl.exe&quot;,
+      &quot;MSHTA.EXE&quot;, &quot;RUNDLL32.EXE&quot;, &quot;REGSVR32.EXE&quot;, &quot;wscript.exe&quot;, &quot;cscript.exe&quot;
+    )
+  ) and
+  process.command_line : (
+    &quot;*http://*&quot;, &quot;*https://*&quot;, &quot;* -e *&quot;, &quot;* -en *&quot;, &quot;* -enc*&quot;, &quot;* -ec *&quot;, &quot;* /e *&quot;, &quot;* /en *&quot;, &quot;* /enc*&quot;,
+    &quot;* /ec *&quot;, &quot;*EncodedCommand*&quot;, &quot;*FromBase64String*&quot;, &quot;*Invoke-Expression*&quot;, &quot;*IEX(*&quot;, &quot;*IEX (*&quot;,
+    &quot;* iex *&quot;, &quot;*;iex *&quot;, &quot;*|iex*&quot;, &quot;*| iex*&quot;, &quot;*Invoke-WebRequest*&quot;, &quot;*iwr *&quot;, &quot;*DownloadString*&quot;,
+    &quot;*DownloadFile*&quot;, &quot;*Net.WebClient*&quot;, &quot;*-urlcache*&quot;, &quot;*/transfer*&quot;, &quot;*whoami*&quot;
+  )</code></pre></div>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="ln">
+                        <details class="det">
+                            <summary><span class="sev crit">CRITICAL</span><span class="det-file">teams_fake_it_support_rmm.yaml</span><span class="det-name">MS-Teams Based Detection of Fake IT Support and RMM Deployment</span><span class="det-meta">KQL · m365</span></summary>
+                            <div class="det-body">
+                                <p class="det-desc">This use case monitors for email addresses registered with the onmicrosoft.com domain and checks for the presence of suspicious URLs that are commonly associated with executable files or known Remote Monitoring and Management (RMM) tools. The purpose is to identify potential malicious activities, such as unauthorized guest account creations and attempts to deploy RMM tools for malicious purposes.</p>
+                                <p class="det-mitre"><span class="dim">mitre =</span> T1566.003 Spearphishing via Service · T1219 Remote Access Software</p>
+                                <div class="det-code"><button type="button" class="copy" aria-label="Copy query">copy</button><pre><code>user.email:*@*.onmicrosoft.com and (o365.audit.MessageURLs:(*.exe or *.msi or *.js) or o365.audit.MessageURLs:(*ninjaone.com* or *atera.com* or *syncroweb.com* or *superops.com* or *n-able.com* or *gotoremember.com* or *barracudamsp.com* or *manageengine.com* or *site24x7.com* or *paessler.com* or *compuware.com* or *teamviewer.com* or *rippling.com* or *msp360.com* or *pulseway.com* or *optimtune.com* or *connectwise.com* or *domotz.com* or *anydesk.com*))</code></pre></div>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="ln">
+                        <details class="det">
+                            <summary><span class="sev crit">CRITICAL</span><span class="det-file">teams_executable_link.yaml</span><span class="det-name">Suspicious Message with Executable Link in Teams</span><span class="det-meta">KQL · m365</span></summary>
+                            <div class="det-body">
+                                <p class="det-desc">This rule detects instances where a Microsoft Teams message contains a hyperlink pointing to potentially malicious file types such as .exe, .msi, .js, .ps1, or .vbs. It filters for messages created with links (MessageCreatedHasLink) and checks if the participating domain is present, indicating external communication. This behavior is commonly associated with phishing or malware delivery attempts via Teams.</p>
+                                <p class="det-mitre"><span class="dim">mitre =</span> T1566 Phishing · T1204 User Execution · T1071 Application Layer Protocol</p>
+                                <div class="det-code"><button type="button" class="copy" aria-label="Copy query">copy</button><pre><code>o365.audit.ParticipantInfo.ParticipatingDomains:* and event.action:&quot;MessageCreatedHasLink&quot; and o365.audit.MessageURLs: (*.exe or *.msi or *.js or *.ps1 or *.vbs)</code></pre></div>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="ln">
+                        <details class="det">
+                            <summary><span class="sev med">MEDIUM</span><span class="det-file">meshagent_command_exec.yaml</span><span class="det-name">Remote Access Tool - MeshAgent Command Execution via MeshCentral</span><span class="det-meta">Lucene · windows</span></summary>
+                            <div class="det-body">
+                                <p class="det-desc">Detects the use of MeshAgent to execute commands on the target host, particularly when threat actors might abuse it to execute commands directly. MeshAgent can execute commands on the target host by leveraging win-console to obscure their activities and win-dispatcher to run malicious code through IPC with child processes.</p>
+                                <p class="det-mitre"><span class="dim">mitre =</span> T1219 Remote Access Software</p>
+                                <div class="det-code"><button type="button" class="copy" aria-label="Copy query">copy</button><pre><code>(event.category:process AND process.parent.executable:/.*\\[Mm][Ee][Ss][Hh][Aa][Gg][Ee][Nn][Tt]\.[Ee][Xx][Ee]/ AND process.executable:(/.*\\[Cc][Mm][Dd]\.[Ee][Xx][Ee]/ OR /.*\\[Pp][Oo][Ww][Ee][Rr][Ss][Hh][Ee][Ll][Ll]\.[Ee][Xx][Ee]/ OR /.*\\[Pp][Ww][Ss][Hh]\.[Ee][Xx][Ee]/))</code></pre></div>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="ln">
+                        <details class="det">
+                            <summary><span class="sev high">HIGH</span><span class="det-file">asrep_roasting_tgt.yaml</span><span class="det-name">Potential AS-REP Roasting via Kerberos TGT Requests</span><span class="det-meta">KQL · active-directory</span></summary>
+                            <div class="det-body">
+                                <p class="det-desc">Detects suspicious Kerberos TGT requests with pre-authentication disabled (Pre-Authentication Type = 0) and Ticket Encryption Type (0x17) i.e, RC4-HMAC. This may indicate an AS-REP Roasting attack, where attackers request AS-REP messages for accounts without pre-authentication and attempt to crack the encrypted ticket offline to recover user passwords.</p>
+                                <p class="det-mitre"><span class="dim">mitre =</span> T1558.004 AS-REP Roasting</p>
+                                <div class="det-code"><button type="button" class="copy" aria-label="Copy query">copy</button><pre><code> (event.code:&quot;4768&quot; and winlog.event_data.Status:&quot;0x0&quot; and winlog.event_data.TicketEncryptionType: &quot;0x17&quot;) and service.name:(&quot;krbtgt&quot; ) and winlog.event_data.PreAuthType :&quot;0&quot;</code></pre></div>
+                            </div>
+                        </details>
+                    </li>
+                    <li class="ln">
+                        <details class="det">
+                            <summary><span class="sev med">MEDIUM</span><span class="det-file">apt_cache_tampering.toml</span><span class="det-name">APT Download Cache Modified by Unusual Process</span><span class="det-meta">EQL · linux</span></summary>
+                            <div class="det-body">
+                                <p class="det-desc">Detects the creation or modification of files in the APT package download cache or partial-download directories by a process outside the APT and DPKG toolchain. These directories hold packages and package indexes after download and before installation. An adversary able to write to them, for example while exploiting a download verification bypass such as CVE-2026-109518, can replace a verified package with a malicious one whose maintainer scripts then run as root.</p>
+                                <p class="det-mitre"><span class="dim">mitre =</span> T1195.002 Compromise Software Supply Chain · T1554 Compromise Host Software Binary</p>
+                                <div class="det-code"><button type="button" class="copy" aria-label="Copy query">copy</button><pre><code>file where host.os.type == &quot;linux&quot; and event.type in (&quot;creation&quot;, &quot;change&quot;) and
+  file.path like (
+    &quot;/var/cache/apt/archives/*.deb&quot;,
+    &quot;/var/cache/apt/archives/partial/*&quot;,
+    &quot;/var/lib/apt/lists/partial/*&quot;
+  ) and not (
+    process.executable like (
+      &quot;/usr/bin/apt&quot;, &quot;/usr/bin/apt-get&quot;, &quot;/usr/bin/aptitude*&quot;, &quot;/usr/bin/dpkg&quot;, &quot;/usr/lib/apt/methods/*&quot;,
+      &quot;/usr/lib/apt/apt-helper&quot;, &quot;/usr/libexec/packagekitd&quot;, &quot;/usr/lib/packagekit/packagekitd&quot;, &quot;/usr/sbin/synaptic&quot;,
+      &quot;/usr/sbin/apt-cacher-ng&quot;
+    ) or
+    (process.name like &quot;python*&quot; and process.args like (
+      &quot;/usr/bin/unattended-upgrade*&quot;, &quot;/usr/sbin/aptd&quot;, &quot;/usr/lib/update-notifier/*&quot;, &quot;/usr/bin/apt-listchanges&quot;
+    ))
+  )</code></pre></div>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+                <p class="ln dim det-note">The rest stay private to the environments they protect.</p>
             </div>
-            <div class="skills-grid">
-                <div class="skcard"><div class="skc-hd"><span>🎯</span><h3>Threat Hunting &amp; IR</h3></div><div class="sktags"><span class="sktag bold">Malware Analysis</span><span class="sktag bold">P1/P2 IR</span><span class="sktag">DFIR</span><span class="sktag">IOC Extraction</span><span class="sktag">Behavioral Analysis</span><span class="sktag">Threat Intel</span></div></div>
-                <div class="skcard"><div class="skc-hd"><span>📊</span><h3>SIEM Platforms</h3></div><div class="sktags"><span class="sktag bold">Elastic ELK</span><span class="sktag bold">Azure Sentinel</span><span class="sktag">Splunk</span><span class="sktag">SOAR Automation</span><span class="sktag">Swimlane SOAR</span></div></div>
-                <div class="skcard"><div class="skc-hd"><span>🛡️</span><h3>EDR / XDR</h3></div><div class="sktags"><span class="sktag">CrowdStrike Falcon</span><span class="sktag">SentinelOne</span><span class="sktag">MS Defender</span><span class="sktag">CB Defense</span><span class="sktag">Proofpoint TAP</span><span class="sktag">Mimecast</span></div></div>
-                <div class="skcard"><div class="skc-hd"><span>⚔️</span><h3>Purple Team</h3></div><div class="sktags"><span class="sktag bold">AD Attacks (CRTE)</span><span class="sktag">Cobalt Strike</span><span class="sktag">Atomic Red Team</span><span class="sktag">CALDERA</span><span class="sktag">MITRE ATT&CK</span><span class="sktag">LOLBAS</span></div></div>
-                <div class="skcard"><div class="skc-hd"><span>📝</span><h3>Detection Languages</h3></div><div class="sktags"><span class="sktag bold">Sigma Rules</span><span class="sktag bold">KQL</span><span class="sktag">YARA</span><span class="sktag">SPL</span><span class="sktag">EQL</span></div></div>
-                <div class="skcard"><div class="skc-hd"><span>⚙️</span><h3>Scripting &amp; Automation</h3></div><div class="sktags"><span class="sktag bold">Python</span><span class="sktag">PowerShell</span><span class="sktag">SQL</span><span class="sktag">Bash</span><span class="sktag">REST APIs</span><span class="sktag">Workflow Automation</span></div></div>
-                <div class="skcard"><div class="skc-hd"><span>☁️</span><h3>Cloud Security</h3></div><div class="sktags"><span class="sktag">Microsoft 365 Security</span><span class="sktag">Azure AD</span><span class="sktag">M365 Defender</span><span class="sktag">Conditional Access</span><span class="sktag">CSPM</span></div></div>
-                <div class="skcard"><div class="skc-hd"><span>🔬</span><h3>Forensic Tools</h3></div><div class="sktags"><span class="sktag">EZ Tools Suite</span><span class="sktag">RegRipper</span><span class="sktag">Hayabusa</span><span class="sktag">Chainsaw</span><span class="sktag">Volatility</span><span class="sktag">Wireshark</span></div></div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== RECOGNITION ===== -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="sec-hd">
-                <span class="sec-tag">// hall_of_fame</span>
-                <h2 class="sec-title">Recognition</h2>
-                <div class="sec-rule"></div>
-            </div>
-            <div class="rec-grid">
-                <div class="rcard"><div class="rcard-top"><span class="rbadge critical">CRITICAL</span><span class="rnum">01</span></div><h3>Oracle Hall of Fame</h3><p>Critical vulnerability discovery acknowledged in Oracle's official security hall of fame</p></div>
-                <div class="rcard"><div class="rcard-top"><span class="rbadge high">15 CVEs</span><span class="rnum">02</span></div><h3>NCIIPC · Govt. of India</h3><p>15 responsible disclosures acknowledged by India's national cyber authority</p></div>
-                <div class="rcard"><div class="rcard-top"><span class="rbadge medium">BUG BOUNTY</span><span class="rnum">03</span></div><h3>Dell · Trip Advisor · Cybrary</h3><p>Bug bounty recognitions across major enterprise platforms and security communities</p></div>
-                <div class="rcard"><div class="rcard-top"><span class="rbadge info">2× WINNER</span><span class="rnum">04</span></div><h3>Top Performer · Eze Castle</h3><p>Consecutive Top Performer of the Year for exceptional SOC leadership in 2022 &amp; 2023</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section bg-white">
-        <div class="container">
-            <div class="sec-hd">
-                <span class="sec-tag">// get_in_touch</span>
-                <h2 class="sec-title">Connect</h2>
-                <div class="sec-rule"></div>
-            </div>
-            <div class="contact-grid">
-                <div class="cgrid-left">
-                    <p>Open to collaboration on security research, purple team engagements, open-source detection tooling, and knowledge sharing. Working on something interesting in defensive security? Let's talk.</p>
-                    <div class="cinfo">
-                        <div class="cinfo-row"><span class="cinfo-k">EMAIL</span><span class="cinfo-v">prashanth.inbox [at] tuta [dot] com</span></div>
-                        <div class="cinfo-row"><span class="cinfo-k">LOCATION</span><span class="cinfo-v">Hyderabad, Telangana, India</span></div>
-                        <div class="cinfo-row"><span class="cinfo-k">WEBSITE</span><a href="https://prashanth.blog" target="_blank" class="cinfo-v cinfo-lnk">prashanth.blog</a></div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/0xPrashanthSec" target="_blank" class="slink">GitHub</a>
-                        <a href="https://linkedin.com/in/0xPrashanthSec" target="_blank" class="slink">LinkedIn</a>
-                        <a href="https://medium.com/@prashanth-pulisetti" target="_blank" class="slink">Medium</a>
-                        <a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank" class="slink">SOC Cmds</a>
-                    </div>
-                </div>
-                <div class="cgrid-right">
-                    <div class="code-window">
-                        <div class="cw-bar"><span class="cw-dot r"></span><span class="cw-dot y"></span><span class="cw-dot g"></span><span class="cw-name">contact.py</span></div>
-                        <pre class="cw-pre"><code class="language-python">operator = {
-    "name":     "Sai Prashanth Pulisetti",
-    "role":     "SOC Lead | Detection Engineer",
-    "certs":    ["CRTE", "CRTO", "CRTP", "CHFI"],
-    "open_to": [
-        "Security Research",
-        "Purple Team Engagements",
-        "OSS Detection Tooling",
-        "Knowledge Sharing",
-    ],
-    "response": "within 48 hours",
-    "status":   "AVAILABLE",
-}
-
-print(f"Reach: {operator['name']}")
-print(f"Status: {operator['status']}")</code></pre>
-                    </div>
+        <!-- ===== ARSENAL ===== -->
+        <section id="arsenal" class="blk">
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~/arsenal</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="cat arsenal.conf"></span></span></div>
+            <div class="out">
+                <h2 class="ln h"><span class="hn">05</span>Skills &amp; Arsenal</h2>
+                <div class="conf">
+                    <p class="ln"><span class="sect">[threat_hunting_ir]</span> Malware analysis, P1/P2 incident response, DFIR, IOC extraction, behavioral analysis, threat intel</p>
+                    <p class="ln"><span class="sect">[siem]</span> Elastic (ELK), Azure Sentinel, Splunk, SOAR automation</p>
+                    <p class="ln"><span class="sect">[edr_xdr]</span> CrowdStrike Falcon, SentinelOne, Microsoft Defender, CB Defense, Proofpoint TAP, Mimecast</p>
+                    <p class="ln"><span class="sect">[purple_team]</span> AD attacks (CRTE), Cobalt Strike, Atomic Red Team, CALDERA, MITRE ATT&amp;CK, LOLBAS</p>
+                    <p class="ln"><span class="sect">[detection]</span> Sigma, KQL, EQL, ES|QL, YARA, SPL</p>
+                    <p class="ln"><span class="sect">[cloud]</span> Microsoft 365 security, Entra ID, M365 Defender, Conditional Access, CSPM</p>
+                    <p class="ln"><span class="sect">[leadership]</span> SOC management, shift operations, analyst mentoring, detection program strategy</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-logo">Sai Prashanth Pulisetti</div>
-                <p class="footer-sub">Built to defend. Engineered to detect.</p>
-                <div class="footer-links">
-                    <a href="https://github.com/0xPrashanthSec" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/0xPrashanthSec" target="_blank">LinkedIn</a>
-                    <a href="https://prashanth.blog" target="_blank">Blog</a>
-                    <a href="https://medium.com/@prashanth-pulisetti" target="_blank">Medium</a>
-                </div>
-                <p class="footer-copy">© 2024 Sai Prashanth Pulisetti · All rights reserved</p>
+        <!-- ===== RECOGNITION ===== -->
+        <section id="recognition" class="blk">
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~/hof</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="grep -ri &quot;acknowledged&quot; ./recognition/"></span></span></div>
+            <div class="out">
+                <h2 class="ln h"><span class="hn">06</span>Recognition</h2>
+                <ul class="hof">
+                    <li class="ln"><span class="sev crit">CRITICAL</span><span class="file">oracle/hall_of_fame.txt:</span> Critical vulnerability discovery acknowledged in Oracle's security hall of fame</li>
+                    <li class="ln"><span class="sev high">×15</span><span class="file">nciipc/disclosures.log:</span> 15 responsible disclosures acknowledged by India's national cyber authority</li>
+                    <li class="ln"><span class="sev med">BOUNTY</span><span class="file">bug_bounty/*.txt:</span> Recognitions from Dell, Trip Advisor and Cybrary</li>
+                    <li class="ln"><span class="sev info">2×</span><span class="file">eze_castle/awards.md:</span> Top Performer of the Year, 2022 and 2023</li>
+                </ul>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <script src="./script.js"></script>
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="blk">
+            <div class="cmdline"><span class="ps"><b>┌──(</b><em>root㉿0xPrashanthSec</em><b>)-[</b><i>~/contact</i><b>]</b></span><span class="ps2"><b>└─</b><em>#</em> <span class="cmd" data-cmd="./contact.sh --open-channel"></span></span></div>
+            <div class="out">
+                <h2 class="ln h"><span class="hn">07</span>Connect</h2>
+                <p class="ln prose-one">Open to security research, purple team engagements, open-source detection tooling and knowledge sharing. Working on something interesting in defensive security? Let's talk.</p>
+                <div class="kv">
+                    <p class="ln"><span class="k">email</span><span class="v links"><span class="b64" data-b64="cHJhc2hhbnRoLmluYm94QHR1dGEuY29t"><code class="b64-cmd">echo cHJhc2hhbnRoLmluYm94QHR1dGEuY29t | base64 -d</code> <button type="button" class="b64-btn" aria-label="Decode email address">decode</button></span></span></p>
+                    <p class="ln"><span class="k">location</span><span class="v">Hyderabad, Telangana, India</span></p>
+                    <p class="ln"><span class="k">response</span><span class="v">within 48 hours</span></p>
+                    <p class="ln"><span class="k">channels</span><span class="v links">
+                        <a href="https://github.com/0xPrashanthSec" target="_blank" rel="noopener">github</a>
+                        <a href="https://linkedin.com/in/0xPrashanthSec" target="_blank" rel="noopener">linkedin</a>
+                        <a href="https://prashanth.blog" target="_blank" rel="noopener">blog</a>
+                        <a href="https://medium.com/@prashanth-pulisetti" target="_blank" rel="noopener">medium</a>
+                        <a href="https://github.com/0xPrashanthSec/SOC-Investigations" target="_blank" rel="noopener">soc-cmds</a>
+                    </span></p>
+                </div>
+                <p class="ln ok">✔ channel open · awaiting your message</p>
+            </div>
+        </section>
+
+        <!-- ===== EXIT ===== -->
+        <footer class="blk foot">
+            <div class="cmdline"><span class="ps2 solo"><b>└─</b><em>#</em> <span class="cmd" data-cmd="exit"></span></span></div>
+            <div class="out">
+                <p class="ln dim">logout</p>
+                <p class="ln foot-line">Built to defend. Engineered to detect. <span class="dim">© <span id="year">2026</span> Sai Prashanth Pulisetti</span></p>
+                <p class="ln dim">Connection to 0xPrashanthSec closed.<span class="caret">_</span></p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="./term.js"></script>
 </body>
 </html>
